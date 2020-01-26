@@ -7,3 +7,4 @@
 * Interakce nadpisu na scrollování
 * ? možná rozanimování vody ?
 * menu
+* přidat scroll master
