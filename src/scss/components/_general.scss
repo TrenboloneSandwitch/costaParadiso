@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('../assets/fonts/Noto_Serif/NotoSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'QuickSand';
+  src: url('../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+};
+
+  body, html{
+    overflow-x: hidden;
+  }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'QuickSand';
+  color: $dark;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Noto Serif';
+  font-weight: 500;
+}
