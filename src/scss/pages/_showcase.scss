@@ -7,38 +7,63 @@
 
   &__content{ 
     position: absolute;
-    width: 100%;
-    padding: 2em 0;
+    width: 90%;
+    padding: 1.5em;
     top: 50%;
-    @include translate(0, -50%);
+    left: 50%;
+    @include translate(-50%, -50%);
     text-align: center;
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(0, 34, 55, 0.23);
+    border-radius: 10px;
+    
+  
 
-    @include tablet{
-      
+    @include md{
+      background-color: unset;
       padding: 0;
-      top: 3vw;
-      left: 3vw;
+      top: 2%;
+      left: 2%;
       @include translate(0, 0);
       z-index: 1;
       align-items: flex-start;
       width: max-content;
     }
 
+    @include lg{
+      top: 5%;
+      left: 5%;
+    }
+    @include xlg{
+      top: 5%;
+      left: 5%;
+    }
+
 
     #{$sc}__heading{
-      font-size: calc(4em + 3vw);
+      font-size: calc(2.5em + 5vw);
       font-variant-caps: small-caps;
       line-height: .95;
-      
+      width: 100%;
+      color: $light;
 
-      @include tablet{
-        font-size: calc(3.2em + 1vw);
-
+      @include md{
+        font-size: calc(2.3em + 1vw + 1vh);
+        width: auto;
+        color: $dark;
       }
+      @include lg{
+        font-size: calc(3.5em + 1.1vw + .9vh);
+      }
+
+      @include xlg{
+        font-size: calc(4.5em + 1.1vw + .9vh);
+      }
+
+
       
       
 
@@ -47,18 +72,28 @@
       font-size: calc(1.1em + 1vw);
       letter-spacing: -0.04em;
       text-align: center;
-      position: relative;
-      padding: 0 .1em;
       margin-top: 1em;
-      width: 70%;     
-      display: none; 
+      width: 75%;
+      padding: .5em;
+      color: $light;
 
-      @include tablet{
+
+      @include md{
+        background-color: unset;
         display: inherit;
-        font-size: calc(.55em + 1.1vw); 
+        font-size: calc(.15em + 1vw + 1vh); 
         margin-top: -.1em;
-        width: 90%;
+        width: inherit;
         align-self: center;
+        padding: 0 .1em;
+        width: auto;
+        color: $dark;
+      }
+      @include lg{
+        font-size: calc(.1em + 1.1vw + .9vh);
+      }
+      @include xlg{
+        font-size: calc(.25em + 1.1vw + .9vh);
       }
     }
   }
@@ -70,7 +105,7 @@
     #{$sc}__sky{
       width: 100vw;
       height: 100vh;
-      background: no-repeat center center /cover url('../assets/img/2381.jpg');
+      background: no-repeat center center /cover url('../assets/img/6828.jpg');
       z-index: -1;
       filter: blur(1px);
       filter: saturate(110%);

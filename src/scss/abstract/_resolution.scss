@@ -4,23 +4,29 @@ $extra-small: 325px;
 $md: 570px;
 
 
-$lg: 995px;
+$lg: 900px;
+$xlg: 1440px;
 
-
-@mixin mobile {
+@mixin sm {
   @media (min-width: #{$extra-small}) {
     @content;
   }
 }
 
-@mixin tablet {
+@mixin md {
   @media (min-width: #{$md}) {
     @content;
   }
 }
 
-@mixin smallDesktop {
-  @media (min-width: #{$md}) {
+@mixin lg {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin xlg {
+  @media (min-width: #{$xlg}) {
     @content;
   }
 }
