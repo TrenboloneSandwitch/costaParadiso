@@ -1,11 +1,13 @@
 
 $extra-small: 325px;
 
-$md: 570px;
+$md: 568px;
 
 
-$lg: 900px;
+$lg:768px;
 $xlg: 1440px;
+
+$xxlg: 1920px;
 
 @mixin sm {
   @media (min-width: #{$extra-small}) {
@@ -27,6 +29,12 @@ $xlg: 1440px;
 
 @mixin xlg {
   @media (min-width: #{$xlg}) {
+    @content;
+  }
+}
+
+@mixin xxlg {
+  @media (min-width: #{$xxlg}) {
     @content;
   }
 }

@@ -1,11 +1,11 @@
-.showcase{
+.showcase {
   $sc: &;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  clip-path: url(#wave); 
+  clip-path: url(#wave);
 
-  &__content{ 
+  &__content {
     position: absolute;
     width: 90%;
     padding: 1.5em;
@@ -19,56 +19,55 @@
     align-items: center;
     background-color: rgba(0, 34, 55, 0.23);
     border-radius: 10px;
-    
-  
 
-    @include md{
+    @include md {
       background-color: unset;
       padding: 0;
-      top: 2%;
-      left: 2%;
+      top: 3%;
+      left: 3%;
       @include translate(0, 0);
       z-index: 1;
       align-items: flex-start;
       width: max-content;
     }
 
-    @include lg{
-      top: 5%;
-      left: 5%;
-    }
-    @include xlg{
+    @include lg {
       top: 5%;
       left: 5%;
     }
 
+    @include xlg {
+      top: 5%;
+      left: 5%;
+    }
 
-    #{$sc}__heading{
+    #{$sc}__heading {
       font-size: calc(2.5em + 5vw);
       font-variant-caps: small-caps;
       line-height: .95;
       width: 100%;
       color: $light;
 
-      @include md{
+      @include md {
         font-size: calc(2.3em + 1vw + 1vh);
         width: auto;
         color: $dark;
       }
-      @include lg{
-        font-size: calc(3.5em + 1.1vw + .9vh);
+
+      @include lg {
+        font-size: calc(3.5em + .9vw + .9vh);
       }
 
-      @include xlg{
+      @include xlg {
         font-size: calc(4.5em + 1.1vw + .9vh);
       }
 
-
-      
-      
-
+      @include xxlg {
+        font-size: calc(5.5em + 2.1vw + 1.9vh);
+      }
     }
-    #{$sc}__quote{
+
+    #{$sc}__quote {
       font-size: calc(1.1em + 1vw);
       letter-spacing: -0.04em;
       text-align: center;
@@ -77,11 +76,10 @@
       padding: .5em;
       color: $light;
 
-
-      @include md{
+      @include md {
         background-color: unset;
         display: inherit;
-        font-size: calc(.15em + 1vw + 1vh); 
+        font-size: calc(.3em + 1vw + .8vh);
         margin-top: -.1em;
         width: inherit;
         align-self: center;
@@ -89,73 +87,96 @@
         width: auto;
         color: $dark;
       }
-      @include lg{
-        font-size: calc(.1em + 1.1vw + .9vh);
+
+      @include lg {
+        font-size: calc(.3em + .9vw + .9vh);
       }
-      @include xlg{
+
+      @include xlg {
         font-size: calc(.25em + 1.1vw + .9vh);
       }
     }
   }
 
-  &__bg{
-    
-    
-
-    #{$sc}__sky{
-      width: 100vw;
-      height: 100vh;
+  &__bg {
+    #{$sc}__sky {
+      width: 100%;
+      height: 50vh;
       background: no-repeat center center /cover url('../assets/img/6828.jpg');
       z-index: -1;
-      filter: blur(1px);
-      filter: saturate(110%);
-       
-
-
     }
-    #{$sc}__beach{
+
+    #{$sc}__beach {
       position: absolute;
       top: 0;
       left: 0;
       background: no-repeat top center/cover url('../assets/img/costaParadiso.png');
       width: 100%;
       height: 100%;
-      filter: saturate(.7);
       z-index: 2;
-      
-
-
     }
   }
 
-  &__wave{
+  &__wave {
     position: absolute;
     bottom: -1px;
-    width: 101%;
+    width: 100%;
     z-index: 3;
-    #{$sc}__curve{
+
+    #{$sc}__curve {
       fill: $light;
     }
   }
 
-  // Temporary
-  .navbar__icon{
-    z-index: 3;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: min-content;
-    width: min-content;
+  &.active {
+    @include filter(blur, 5px);
 
-    .fas{
-      color: $light;
-      padding: .15em;
-      backdrop-filter: blur(2px);
+    #{$sc}__content {
+      left: -150%;
     }
-    
+  }
+}
+
+// Temporary
+.navbar__icon {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: min-content;
+  width: min-content;
+  cursor: pointer !important;
+
+  .fas {
+    color: $light;
+    padding: .15em;
+  }
+}
+
+// Temporary
+
+.navbar {
+  &.active {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+  }
+
+  &__list {
+    list-style-type: none;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Noto Serif';
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  &__item {}
+
+  &__link {
+    color: $light;
     
   }
-  // Temporary
-
-
 }
