@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100%;
   position: relative;
-  clip-path: url(#wave);
+  //clip-path: url(#wave);
 
   &__content {
     position: absolute;
@@ -46,12 +46,12 @@
       font-variant-caps: small-caps;
       line-height: .95;
       width: 100%;
-      color: $light;
+      color: $light-bg;
 
       @include md {
         font-size: calc(2.3em + 1vw + 1vh);
         width: auto;
-        color: $dark;
+        color: $primary-dark;
       }
 
       @include lg {
@@ -74,7 +74,7 @@
       margin-top: 1em;
       width: 75%;
       padding: .5em;
-      color: $light;
+      color: $light-bg;
 
       @include md {
         background-color: unset;
@@ -85,7 +85,7 @@
         align-self: center;
         padding: 0 .1em;
         width: auto;
-        color: $dark;
+        color: $primary-dark;
       }
 
       @include lg {
@@ -124,7 +124,7 @@
     z-index: 3;
 
     #{$sc}__curve {
-      fill: $light;
+      fill: $light-bg;
     }
   }
 
@@ -148,7 +148,7 @@
   cursor: pointer !important;
 
   .fas {
-    color: $light;
+    color: $light-bg;
     padding: .15em;
   }
 }
@@ -156,9 +156,12 @@
 // Temporary
 
 .navbar {
+opacity: 0;
+left: -100%;
+position: absolute;
   &.active {
     z-index: 100;
-    position: absolute;
+    opacity: 1;
     left: 50%;
     top: 50%;
     @include translate(-50%, -50%);
@@ -169,14 +172,15 @@
     text-align: center;
     font-size: 3em;
     font-family: 'Noto Serif';
-    text-transform: uppercase;
     line-height: 1.5;
+    font-weight: bold;
+    font-variant-caps: small-caps;
   }
 
   &__item {}
 
   &__link {
-    color: $light;
+    color: $light-bg;
     
   }
 }

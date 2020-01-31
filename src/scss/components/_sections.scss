@@ -1,0 +1,35 @@
+
+@mixin section--color($bg, $col) {
+    background-color: $bg;
+    color: $col !important;
+}
+
+.section{
+   
+}
+
+.section--light{
+    //padding-bottom: 99px;
+    @include section--color($light-bg, $primary-dark);
+}
+
+.section--dark{
+    padding: 0;
+    @include section--color($blue-bg, $primary-dark);
+    position: relative;
+    z-index: 5;
+    
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        content: '';
+        background: no-repeat center center /cover url('../assets/img/costaParadiso.png');
+        background-attachment: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: .2;
+    }
+}
