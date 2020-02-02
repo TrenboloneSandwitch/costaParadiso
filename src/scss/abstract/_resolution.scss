@@ -9,6 +9,18 @@ $xlg: 1440px;
 
 $xxlg: 1920px;
 
+@mixin ap-1 {
+  @media (min-width: 428px) {
+    @content;
+  }
+}
+
+@mixin ap-2 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media (min-width: #{$extra-small}) {
     @content;

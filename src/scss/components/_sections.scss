@@ -5,12 +5,37 @@
 }
 
 .section{
-   
+    .container{
+        padding: 3em 0;
+
+        &__text{
+            text-align: justify;
+        }
+    }
+    
+
+    &__wave--top{
+        @include scale(-1,-1);
+        margin-top: -1px;
+    }
+    
+    &__wave--bottom{
+        margin-bottom: -5px;
+    }
+    &__curve{
+        fill: $light-bg;
+    }
 }
 
 .section--light{
-    //padding-bottom: 99px;
     @include section--color($light-bg, $primary-dark);
+}
+
+.section--nearby{
+    &::after{
+        background: no-repeat right bottom /cover url('../assets/img/byt1.jpg');
+        background-attachment: fixed;
+    }
 }
 
 .section--dark{
@@ -25,11 +50,9 @@
         left: 0;
         display: block;
         content: '';
-        background: no-repeat center center /cover url('../assets/img/costaParadiso.png');
-        background-attachment: fixed;
         width: 100%;
         height: 100%;
         z-index: -2;
-        opacity: .2;
+        opacity: .13;
     }
 }

@@ -5,6 +5,10 @@ import { log } from "util";
 
 const showcase = document.querySelector('.showcase');
 
+const wave = document.querySelector('.section__wave--top');
+console.log(document.querySelector('.attributes__icon--acc'));
+
+
 const navbar = {
     btn: document.querySelector('.navbar__icon'),
     content: document.querySelector('.navbar'),

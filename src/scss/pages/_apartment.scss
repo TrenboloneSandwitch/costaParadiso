@@ -1,0 +1,85 @@
+.attributes{
+  $atr: &;
+  margin-top: 3em;
+
+  &__row{
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+  }
+
+  
+
+  &__element{    
+    @include flexbox;
+    width: 100%;
+    height: max-content;
+    @include align-items(center);
+    @include justify-content(center);
+
+    &:not(:first-child){
+      margin-top: 2em;
+    }
+
+    @include ap-1{
+      width: 50%;
+      padding: 0 5px;
+      &:not(:first-child){
+        margin-top: 0em;
+      }
+
+      &:nth-child(3), &:nth-child(4){
+        margin-top: 2em;
+      }
+
+      #{$atr}__icon{
+        width: 90px;
+      }
+    }
+
+    @include ap-2{
+      width: 25%;
+      @include flex-direction(row);
+      padding: 0 5px;
+
+
+      &:nth-child(3), &:nth-child(4){
+        margin-top: 0em;
+      }
+
+      #{$atr}__icon{
+        width: 90px;
+      }
+
+    }
+
+    
+
+    #{$atr}__icon{
+      width: 100px;
+      height: 80px;
+      display: block;
+    }
+
+    #{$atr}__icon--composition{
+      background: no-repeat center center /contain url('../assets/img/svg/compos.svg');
+    }
+
+    #{$atr}__icon--acc{
+      background: no-repeat center center /contain url('../assets/img/svg/acc.svg');
+    }
+    #{$atr}__icon--parking{
+      background: no-repeat center center /contain url('../assets/img/svg/garage.svg');
+    }
+    #{$atr}__icon--view{
+      background: no-repeat center center /contain url('../assets/img/svg/seaview.svg');
+    }
+
+    #{$atr}__text{
+      width: 8.5em;
+      margin-left: 1em;
+      font-size: calc(1em + .5vw);
+    }
+  }
+}

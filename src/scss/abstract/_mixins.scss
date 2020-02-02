@@ -87,8 +87,8 @@
 }
 
 // Scale
-@mixin scale($scale) {
-	@include transform(scale($scale));
+@mixin scale($s1, $s2) {
+	@include transform(scale($s1, $s2));
 }
 
 @mixin scaleX($scaleX) {

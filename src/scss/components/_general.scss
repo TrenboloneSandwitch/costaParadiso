@@ -20,7 +20,43 @@
   font-family: 'QuickSand';
 }
 
+p{
+  font-size:calc(.8em + .5vw);
+  font-weight: regular;
+}
+
 h1, h2, h3, h4, h5{
   font-family: 'Noto Serif';
   font-weight: 500;
+}
+h1{
+  font-size: calc(1em + 10vw);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: .95;
+
+  @include md {
+    font-size: calc(1.3em + 8vw);
+  }
+
+  @include lg {
+    font-size: calc(4em + 2vw);
+  }
+
+  @include xlg {
+    font-size: calc(4.5em + 1vw);
+  }
+}
+
+.text-high--blue{
+  color: $highlited-blue;
+  font-weight: bold;
+}
+.text-high--dark{
+  color: $primary-dark;
+  font-weight: bold;
+}
+
+.m-tb{
+  margin: 1.5em 0;
 }

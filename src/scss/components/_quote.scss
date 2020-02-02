@@ -1,0 +1,34 @@
+.quote{
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  margin: 3em 0 3.2em 0;
+
+  &__box{
+    background: $highlited-blue;
+    height:6em;
+    width:6em;
+    max-width: 10vw;
+    max-height: 10vw;
+    border-radius:calc(1vw);
+    margin : 0 10px;
+    padding:5px;
+
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  &__icon{
+    height: 75%;
+    width: 75%;
+    background: no-repeat center center /contain url('../assets/img/svg/marks.svg');
+  }
+  &__text{
+    width: max-content;
+    margin : 0 10px;
+    font-weight: bold;
+    font-size: calc(1em + 1.8vw);
+    color:$highlited-blue;
+  }
+}
