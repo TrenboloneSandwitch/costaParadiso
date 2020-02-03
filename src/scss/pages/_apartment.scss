@@ -1,67 +1,147 @@
-.attributes{
+.attributes {
   $atr: &;
   margin-top: 3em;
+  &__row--3 {
+    margin-top: 2em;
 
-  &__row{
+    @include ap-2{
+      #{$atr}__element{
+        width: 30%;
+      }
+    }
+  }
+
+  &__row--2 {
+    margin-top: 2em;
+
+    @include ap-2{
+      #{$atr}__icon{
+        fill: $secondary-dark;
+      }
+      #{$atr}__text{
+        color: $secondary-dark;
+      }
+      
+    }
+  }
+
+  &__row--1 {
+    @include ap-2{
+      #{$atr}__icon{
+        fill: $primary-dark;
+      }
+      #{$atr}__text{
+        color: $primary-dark;
+      }
+      
+    }
+  }
+
+  &__row {
     @include flexbox;
     @include flex-direction(row);
     @include align-items(center);
+    @include justify-content(center);
     @include flex-wrap(wrap);
+
+    #{$atr}__element:nth-child(odd) {
+      fill: $primary-dark;
+    }
+    #{$atr}__element:nth-child(even) {
+      fill: $secondary-dark;
+        #{$atr}__text{
+          color: $secondary-dark;
+        }
+    }
+    @include ap-1{
+      #{$atr}__element:nth-child(even) {
+        fill: $primary-dark;
+          #{$atr}__text{
+            color: $primary-dark;
+          }
+      }
+      #{$atr}__element:nth-child(1),#{$atr}__element:nth-child(4), #{$atr}__list  {
+        fill: $secondary-dark;
+
+        #{$atr}__text{
+          color: $secondary-dark;
+        }
+        #{$atr}__list{
+          text-align: left;
+        }
+      }
+    }
   }
 
-  
-
-  &__element{    
+  &__element {
     @include flexbox;
     width: 100%;
     height: max-content;
     @include align-items(center);
     @include justify-content(center);
 
-    &:not(:first-child){
+    &:not(:first-child) {
       margin-top: 2em;
     }
 
-    @include ap-1{
+    @include ap-1 {
       width: 50%;
       padding: 0 5px;
-      &:not(:first-child){
+
+      &:not(:first-child) {
         margin-top: 0em;
       }
 
-      &:nth-child(3), &:nth-child(4){
+      &:nth-child(3),
+      &:nth-child(4) {
         margin-top: 2em;
       }
 
-      #{$atr}__icon{
-        width: 90px;
+      #{$atr}__icon {
+        //width: 90px;
       }
     }
 
-    @include ap-2{
+    @include ap-2 {
       width: 25%;
       @include flex-direction(row);
       padding: 0 5px;
 
-
-      &:nth-child(3), &:nth-child(4){
+      &:nth-child(3),
+      &:nth-child(4) {
         margin-top: 0em;
       }
 
-      #{$atr}__icon{
-        width: 90px;
+      #{$atr}__icon--terrace~#{$atr}__text,
+      #{$atr}__icon--nowifi~#{$atr}__text,
+      #{$atr}__list {
+        color: $secondary-dark;
       }
-
+      
     }
 
-    
-
-    #{$atr}__icon{
-      width: 100px;
-      height: 80px;
+    #{$atr}__icon {
+      width: 30%;
+      height: 7em;
       display: block;
     }
 
+    #{$atr}__text {
+      width: 70%;
+      margin-left: 1em;
+      font-size: calc(1em + .2vw);
+    }
+
+    #{$atr}__list {
+      width: 100%;
+      margin-left: 1em;
+      list-style: '- ';
+      font-size: calc(1em + .2vw);
+      text-align: center;
+      color: $secondary-dark;
+    }
+
+    /*
     #{$atr}__icon--composition{
       background: no-repeat center center /contain url('../assets/img/svg/compos.svg');
     }
@@ -75,11 +155,15 @@
     #{$atr}__icon--view{
       background: no-repeat center center /contain url('../assets/img/svg/seaview.svg');
     }
-
-    #{$atr}__text{
-      width: 8.5em;
-      margin-left: 1em;
-      font-size: calc(1em + .5vw);
+    #{$atr}__icon--towels{
+      background: no-repeat center center /contain url('../assets/img/svg/towels.svg');
     }
+    #{$atr}__icon--terrace{
+      background: no-repeat center center /contain url('../assets/img/svg/terrace.svg');
+    }
+
+    #{$atr}__icon--nowifi{
+      background: no-repeat center center /contain url('../assets/img/svg/wifi.svg');
+    }*/
   }
 }

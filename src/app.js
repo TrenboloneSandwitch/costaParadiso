@@ -5,8 +5,43 @@ import { log } from "util";
 
 const showcase = document.querySelector('.showcase');
 
-const wave = document.querySelector('.section__wave--top');
-console.log(document.querySelector('.attributes__icon--acc'));
+const ul = document.querySelector('.at__list');
+const row2 = document.querySelector('.attributes__row--2');
+const row3 = document.querySelector('.attributes__row--3');
+
+window.addEventListener('resize', () => {
+    placeApartmentList();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    placeApartmentList();
+});
+
+function placeApartmentList() {
+    const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
+    if (w >= 1024 && row3.childElementCount === 0){
+        ul.remove();
+        row3.innerHTML = `
+        <div class="attributes__element at__list">
+        <ul class="attributes__list">
+        <li>kuchyňská linka je vybavena</li>
+        <li>koupelna bez pračky</li>
+        </ul>
+        </div>
+        <div class="attributes__element at__list">
+        <ul class="attributes__list">
+        <li>4 lůžka + 1 přistýlka </li>
+        <li>přístup není bezbariérový</li>
+        </ul>
+        </div>
+        `;
+    };
+    if (w < 1024 && row3.childElementCount !== 0){
+        row3.innerHTML='';
+        row2.appendChild(ul);
+        console.log(1);
+    }
+}
 
 
 const navbar = {
