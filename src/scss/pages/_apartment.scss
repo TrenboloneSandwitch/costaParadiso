@@ -1,11 +1,11 @@
 .attributes {
   $atr: &;
   margin-top: 3em;
+
   &__row--3 {
     margin-top: 2em;
-
-    @include ap-2{
-      #{$atr}__element{
+    @include ap-2 {
+      #{$atr}__element {
         width: 30%;
       }
     }
@@ -13,27 +13,27 @@
 
   &__row--2 {
     margin-top: 2em;
-
-    @include ap-2{
-      #{$atr}__icon{
+    @include ap-2 {
+      #{$atr}__icon {
         fill: $secondary-dark;
       }
-      #{$atr}__text{
+
+      #{$atr}__text {
         color: $secondary-dark;
       }
-      
+
     }
   }
 
   &__row--1 {
-    @include ap-2{
-      #{$atr}__icon{
+    @include ap-2 {
+      #{$atr}__icon {
         fill: $primary-dark;
       }
-      #{$atr}__text{
+
+      #{$atr}__text {
         color: $primary-dark;
       }
-      
     }
   }
 
@@ -47,26 +47,34 @@
     #{$atr}__element:nth-child(odd) {
       fill: $primary-dark;
     }
+
     #{$atr}__element:nth-child(even) {
       fill: $secondary-dark;
-        #{$atr}__text{
-          color: $secondary-dark;
-        }
+
+      #{$atr}__text {
+        color: $secondary-dark;
+      }
     }
-    @include ap-1{
+
+    @include ap-1 {
       #{$atr}__element:nth-child(even) {
         fill: $primary-dark;
-          #{$atr}__text{
-            color: $primary-dark;
-          }
+
+        #{$atr}__text {
+          color: $primary-dark;
+        }
       }
-      #{$atr}__element:nth-child(1),#{$atr}__element:nth-child(4), #{$atr}__list  {
+
+      #{$atr}__element:nth-child(1),
+      #{$atr}__element:nth-child(4),
+      #{$atr}__list {
         fill: $secondary-dark;
 
-        #{$atr}__text{
+        #{$atr}__text {
           color: $secondary-dark;
         }
-        #{$atr}__list{
+
+        #{$atr}__list {
           text-align: left;
         }
       }
@@ -96,10 +104,6 @@
       &:nth-child(4) {
         margin-top: 2em;
       }
-
-      #{$atr}__icon {
-        //width: 90px;
-      }
     }
 
     @include ap-2 {
@@ -117,7 +121,7 @@
       #{$atr}__list {
         color: $secondary-dark;
       }
-      
+
     }
 
     #{$atr}__icon {
@@ -140,30 +144,5 @@
       text-align: center;
       color: $secondary-dark;
     }
-
-    /*
-    #{$atr}__icon--composition{
-      background: no-repeat center center /contain url('../assets/img/svg/compos.svg');
-    }
-
-    #{$atr}__icon--acc{
-      background: no-repeat center center /contain url('../assets/img/svg/acc.svg');
-    }
-    #{$atr}__icon--parking{
-      background: no-repeat center center /contain url('../assets/img/svg/garage.svg');
-    }
-    #{$atr}__icon--view{
-      background: no-repeat center center /contain url('../assets/img/svg/seaview.svg');
-    }
-    #{$atr}__icon--towels{
-      background: no-repeat center center /contain url('../assets/img/svg/towels.svg');
-    }
-    #{$atr}__icon--terrace{
-      background: no-repeat center center /contain url('../assets/img/svg/terrace.svg');
-    }
-
-    #{$atr}__icon--nowifi{
-      background: no-repeat center center /contain url('../assets/img/svg/wifi.svg');
-    }*/
   }
 }
