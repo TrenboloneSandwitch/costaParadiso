@@ -6,7 +6,7 @@
 
 .section{
     .container{
-        padding-top: 3em;
+        padding-top: 5rem;
         padding-bottom: 3em;
         &__text{
             text-align: justify;
@@ -31,12 +31,13 @@
     @include section--color($light-bg, $primary-dark);
 }
 
-.section--nearby{
+.section--apartment{
     &::after{
         background: no-repeat right bottom /cover url('../assets/img/byt1.jpg');
         background-attachment: fixed;
     }
 }
+
 
 .section--dark{
     padding: 0;

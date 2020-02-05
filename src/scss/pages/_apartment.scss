@@ -143,6 +143,10 @@
       font-size: calc(1em + .2vw);
       text-align: center;
       color: $secondary-dark;
+
+      @include ap-2{
+        text-align: left;
+      }
     }
   }
 }

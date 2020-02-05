@@ -44,9 +44,11 @@
     #{$sc}__heading {
       font-size: calc(2.5em + 5vw);
       font-variant-caps: small-caps;
+      text-transform: unset;
       line-height: .95;
       width: 100%;
       color: $light-bg;
+      margin-bottom: 0rem;
 
       @include md {
         font-size: calc(2.3em + 1vw + 1vh);

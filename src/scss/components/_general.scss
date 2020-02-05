@@ -25,7 +25,7 @@ p{
   font-weight: regular;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3{
   font-family: 'Noto Serif';
   font-weight: 500;
 }
@@ -34,6 +34,7 @@ h1{
   text-transform: uppercase;
   text-align: center;
   line-height: .95;
+  margin-bottom: 5rem;
 
   @include md {
     font-size: calc(1.3em + 8vw);
