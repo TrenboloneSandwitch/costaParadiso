@@ -36,7 +36,18 @@ module.exports = merge(common, {
       {
         test: /\.s?css$/i,
         use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
-      }
+      },
+      {
+        test: /\.svg$/i,
+    
+        // from all svg images
+        // include only sprite image
+        include: Path.resolve(__dirname, './assets/img'),
+    
+        use: ['svg-sprite-loader'
+        ],
+    },
+    
     ]
   }
 });

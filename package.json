@@ -32,5 +32,8 @@
   },
   "keywords": [],
   "author": "Jan Soldát",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "svg-sprite-loader": "^4.2.1"
+  }
 }

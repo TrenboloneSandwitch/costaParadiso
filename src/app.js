@@ -1,4 +1,6 @@
 import "./main.scss";
+
+import '../assets/img/sprite.svg';
 import { log } from "util";
 
 /* Navbar */
@@ -14,7 +16,7 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    placeApartmentList();
+    placeApartmentList(); 
 });
 
 function placeApartmentList() {
