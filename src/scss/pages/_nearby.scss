@@ -3,62 +3,115 @@
         background: no-repeat right bottom /cover url('../assets/img/beach.jpg');
         background-attachment: fixed;
     }
+}
 
-    .beaches{
-        @include flexbox();
-        @include justify-content(center);
-        @include align-items(flex-start);
-        @include flex-direction(row);
-        @include flex-wrap(wrap);
+.flex-list{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(flex-start);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+
+    &__element{
+        max-width: 20em;
+        text-align: center;
+        width: 100%;
+        padding: .2em;
+
+        &:not(:first-of-type){
+            margin-top: 3em;
+        }
+       
+        @include ap-2{
+            width: 50%;
+            
+            &:nth-of-type(2){
+                margin-top: 0em;
+            }
+        }
         
+    }
 
+    &__icon{
+        width: 100% !important;
+        text-align: center;
+    }
 
-        &__element{
-            max-width: 20em;
-            text-align: center;
-            width: 100%;
-            padding: .2em;
+    &__heading{
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 100%;
+    }
 
-            &:not(:first-of-type){
-                margin-top: 3em;
-            }
-            @include ap-1{
-                width: 50%;
-                
-                &:nth-of-type(2){
-                    margin-top: 0em;
-                }
-                
-            }
-            @include ap-2{
-                width: 25%;
-                &:nth-last-of-type(-n+2){
-                    margin-top: 0;
-                }
+    &__heading--secondary{
+        width: 100%;
+        font-size: 1.1em;
+        font-weight: lighter;
+    }
+
+    &__list{
+        list-style-type: '-';
+        text-align: left;
+    }
+}
+
+.beaches{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(flex-start);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    
+    &__element{
+        max-width: 20em;
+        text-align: center;
+        width: 100%;
+        padding: .2em;
+
+        &:not(:first-of-type){
+            margin-top: 3em;
+        }
+        @include ap-1{
+            width: 50%;
+            
+            &:nth-of-type(2){
+                margin-top: 0em;
             }
             
         }
-        &__img{
-            width: 100%;
-            border-radius: .5rem;
+        @include ap-2{
+            width: 25%;
+            &:nth-last-of-type(-n+2){
+                margin-top: 0;
+            }
         }
+        
+    }
+    &__img{
+        width: 100%;
+        border-radius: .5rem;
+    }
 
-        &__category{
-            text-transform: uppercase;
-            font-weight: bold;
-            width: 100%;
-        }
+    &__icon{
+        width: 100% !important;
+        text-align: center;
+    }
 
-        &__name{
-            width: 100%;
-            font-size: 1.1em;
-            font-weight: lighter;
-        }
+    &__category{
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 100%;
+    }
 
-        &__description{
-            margin-top: 1em;
-            font-size: 1em;
-        }
+    &__name{
+        width: 100%;
+        font-size: 1.1em;
+        font-weight: lighter;
+    }
+
+    &__description{
+        margin-top: 1em;
+        font-size: 1em;
     }
 }
 

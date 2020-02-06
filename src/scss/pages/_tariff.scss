@@ -1,0 +1,33 @@
+
+.tariff__heading{
+    margin: -1em 0 1em 0;
+    text-transform: capitalize;
+    font-variant: small-caps;
+}
+
+.tariff{
+    @include flexbox();
+    @include justify-content(space-between);
+
+    .tariff__row--2{
+       // margin: 1em 0;
+        font-weight: bold;
+    }
+
+    .tariff__row--1, .tariff__row--2, .tariff__row--3{
+        height: 2.5em;
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(flex-start);
+    }
+   
+    .tariff__column--2{
+        text-align: center;
+        padding: 0 .5em;
+    }
+
+    .tariff__column--3{
+        text-align: right;
+        vertical-align: center;
+    }
+}
