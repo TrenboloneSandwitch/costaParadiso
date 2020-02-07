@@ -13,28 +13,30 @@
     @include flex-wrap(wrap);
 
     &__element{
-        max-width: 20em;
+        //max-width: 20em;
         text-align: center;
         width: 100%;
-        padding: .2em;
+        padding: 1em;
+        @include flexbox();
+        @include flex-direction(column);
+        @include align-items(center);
 
-        &:not(:first-of-type){
-            margin-top: 3em;
-        }
        
-        @include ap-2{
+        @include md{
             width: 50%;
-            
-            &:nth-of-type(2){
+            &:not(:first-of-type){
                 margin-top: 0em;
             }
+        }
+
+        @include ap-2{
+            width: 25%;
         }
         
     }
 
     &__icon{
-        width: 100% !important;
-        text-align: center;
+        fill: $highlited-blue;
     }
 
     &__heading{
@@ -43,15 +45,11 @@
         width: 100%;
     }
 
-    &__heading--secondary{
-        width: 100%;
-        font-size: 1.1em;
-        font-weight: lighter;
-    }
-
     &__list{
-        list-style-type: '-';
-        text-align: left;
+        list-style-type: '- ';
+        text-align: justify;
+        margin-bottom: 2em;
+        max-width: 330px;
     }
 }
 

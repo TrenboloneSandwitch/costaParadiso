@@ -73,8 +73,8 @@
   <section class="section section--light">
     <div class="container">
       <h1>Úvod</h1>
-      <blockquote class="quote quote--blue">
-        <div class="quote__box">
+      <blockquote class="quote">
+        <div class="quote__box quote--blue">
           <i class="quote__icon"> </i>
         </div>
         <p class="quote__text">Chcete vidět 4 odstíny modré?</p>
@@ -239,7 +239,7 @@
   <section class="section section--light">
     <div class="container">
       <h1>Ceník A Podmínky</h1>
-      <h2 class="tariff__heading">Apartmán</h2>
+      <h2 class="tariff__heading">Ceník apartmánu</h2>
       <div class="tariff">
         <div class="tariff__column">
           <p class="tariff__row--1">červen a září</p>
@@ -266,13 +266,14 @@
           <svg class="flex-list__icon">
             <use xlink:href="#sprite_car" />
           </svg>
-          <h3 class="flex-list__heading">Pronájem auta</h3>
+          <h3 class="flex-list__heading mt-1">Pronájem auta</h3>
 
-          <h4 class="flex-list__heading--secondary">Škoda Karoq</h4>
-          <ul class="flex-list__list">
+          
+          <ul class="flex-list__list mt-1">
+            <li class="text-high">Škoda Karoq 4x4</li>
             <li>automatická převodovka</li>
-            <li>1100,-Kč/40 € za 1 den</li>
-            <li>možno pronajmout na libovolný počet dnů</li>
+            <li class="text-high">1100,-Kč/40 € za 1 den</li>
+            <li>možnost pronajmutí na libovolný počet dnů</li>
           </ul>
         </div>
 
@@ -280,12 +281,12 @@
           <svg class="flex-list__icon">
             <use xlink:href="#sprite_check-in" />
           </svg>
-          <h3 class="flex-list__heading">Příjezd a odjezd</h3>
-            <ul class="flex-list__list">
-              <li>den příjezdu a odjezdu je zcela na vás</li>
+          <h3 class="flex-list__heading mt-1">Příjezd a odjezd</h3>
+            <ul class="flex-list__list mt-1">
+              <li class="text-high">den příjezdu a odjezdu je zcela na vás</li>
               <li>čas příjezdu – po 14.00</li>
               <li>čas odjezdu – do 11.00</li>
-              <li>minimální počet dnů ubytování = 6 (nocí)</li>
+              <li>minimální počet dnů pro ubytování = <span class="text-high">6 (nocí) </span></li>
             </ul>
         </div>
 
@@ -293,8 +294,8 @@
           <svg class="flex-list__icon">
             <use xlink:href="#sprite_bill" />
           </svg>
-          <h3 class="flex-list__heading">Platební podmínky</h3>
-          <ul class="flex-list__list">
+          <h3 class="flex-list__heading mt-1">Platební podmínky</h3>
+          <ul class="flex-list__list mt-1">
               <li>záloha 50% je vratná pouze 30 dnů před termínem příjezdu (poté je nevratná)</li>
             </ul>
         </div>
@@ -303,12 +304,13 @@
           <svg class="flex-list__icon">
             <use xlink:href="#sprite_debit-card" />
           </svg>
-          <h3 class="flex-list__heading">Platba</h3>
-            <ul class="flex-list__list">
+          <h3 class="flex-list__heading mt-1">Platba</h3>
+            <ul class="flex-list__list mt-1">
               <li>záloha 50% + doplatek 3 dny před příjezdem</li>
-              <li>číslo účtu
-                  <p>CZK - 2105635394/2700</p>
-                  <p>EURO - 2108837290/2700</p>
+              <li> 
+                <span class="text-high">číslo účtu</span> <br>
+                <span>CZK - 2105635394/2700</span> <br>
+                <span>EURO - 2108837290/2700</span>
               </li>
             </ul>
         </div>
@@ -324,15 +326,33 @@
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
     </svg>
     <div class="container">
-      <p class="container__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius soluta alias eos quam perspiciatis deserunt sunt,
-        quae, asperiores fugit iste esse voluptas architecto molestias quisquam minus quia hic eaque sapiente! Molestiae
-        dolore aliquid, ipsam doloribus quam eveniet in tempora nostrum, sed ratione eius cumque. Consequatur est odit
-        numquam? Quod dicta omnis id autem. Corrupti numquam quia dolorem pariatur beatae sequi dolore obcaecati
-        laudantium molestias sit voluptatem, quibusdam magnam atque harum magni tenetur dicta consequatur, porro
-        explicabo provident, praesentium repellat eum. Veniam expedita consectetur necessitatibus autem eius illum
-        doloremque perferendis modi architecto voluptatibus, beatae est maiores tempore sit assumenda nesciunt officiis.
-      </p>
+      <div class="contact__img"></div>
+      <div class="contact__content">
+          <blockquote class="quote">
+              <div class="quote__box quote--red">
+                <i class="quote__icon"> </i>
+              </div>
+              <p class="quote__text">Chcete vidět 4 odstíny modré?</p>
+            </blockquote>
+        <h2>Hana Alexanderová</h2>
+        <div class="contact__phone">
+          <svg class="flex-list__icon">
+            <use xlink:href="#sprite_debit-card" />
+          </svg>
+          <p>+420 111 222 333</p>
+        </div>
+        <form class="form column" id="contactForm" method="POST" aria-label="Kontaktní Formulář">
+          <input class="form__input" name="name" placeholder="Karel Novák" id="name"> 
+          <input class="form__input" name="subject" placeholder="Předmět" id="subject" > 
+          <input class="form__input" name="email" placeholder="vas@e-mail.cz" id="email" > 
+          <input class="form__input" name="year" placeholder="Aktuální Rok" id="year"> 
+          <textarea class="form__input form__text-area" name="msg" placeholder="Text Vaší zprávy..." id="msg">
+
+          </textarea>
+          <div class="form__messages"></div>
+          <input class="full form__button" id="submit" value="ODESLAT" type="submit">
+        </form>
+      </div>
     </div>
   </section>
 

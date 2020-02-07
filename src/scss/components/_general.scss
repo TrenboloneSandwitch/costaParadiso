@@ -24,6 +24,9 @@ p{
   font-size:calc(.8em + .5vw);
   font-weight: regular;
 }
+h2{
+  font-size:calc(1.5em + .5vw)
+}
 
 h1, h2, h3{
   font-family: 'Noto Serif';
@@ -59,4 +62,11 @@ h1{
 
 .m-tb{
   margin: 1.5em 0;
+}
+
+.mt-1{
+  margin-top: 1em;
+}
+.mt-3{
+  margin-top: 3em;
 }

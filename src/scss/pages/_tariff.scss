@@ -1,17 +1,22 @@
 
 .tariff__heading{
-    margin: -1em 0 1em 0;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
     text-transform: capitalize;
     font-variant: small-caps;
 }
+
+
+
 
 .tariff{
     @include flexbox();
     @include justify-content(space-between);
 
     .tariff__row--2{
-       // margin: 1em 0;
+       
         font-weight: bold;
+        margin: .2em 0;
     }
 
     .tariff__row--1, .tariff__row--2, .tariff__row--3{
@@ -19,6 +24,9 @@
         @include flexbox();
         @include flex-direction(column);
         @include justify-content(flex-start);
+        @include ap-1{
+            height: 1.5em;
+        }
     }
    
     .tariff__column--2{
