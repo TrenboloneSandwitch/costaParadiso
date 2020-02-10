@@ -38,7 +38,14 @@ function resizeQuoteBoxes() {
 }
 
 function placeContactHeading() {
-	const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
+
+    const q = document.querySelector('.bg--red').parentNode;
+   const n = document.querySelector('.h2name');
+    n.style.height = q.offsetHeight + 'px';
+   console.log(q.offsetHeight); 
+   
+    
+    /* const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
 
 	if (document.querySelector('.contact__heading')) {
 		document.querySelector('.contact__heading').remove();
@@ -54,7 +61,7 @@ function placeContactHeading() {
 	if (w >= 1024){
 		console.log(2);
 		contact__content.insertBefore(el, contact__content.childNodes[0]);
-	}
+	} */
 }
 
 

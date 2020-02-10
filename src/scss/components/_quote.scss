@@ -46,40 +46,13 @@
 	margin-bottom: 4rem;
 }
 
+.bg--red {
+	background: $highlited-red;
+	height: 60px;
 
-//
-// .bg--red {
-// 	height: 120%;
-// 	width: 120%;
-// 	max-height: 130px;
-// 	max-width: 130px;
-// 	background: $highlited-red;
-// 	position: absolute;
-// 	z-index: -1;
-// 	opacity: 0.13;
-// 	left: -10px;
-//
-// 	& ~ .quote__text {
-// 		color: $primary-dark;
-// 		max-width: max-content;
-// 		word-wrap: break-word;
-// 	}
-// 	@include ap-1 {
-// 		position: relative;
-// 		opacity: 1;
-// 		left: unset;
-// 	}
-// 	@include ap-2 {
-// 		max-width: 100px;
-// 		max-height: 100px;
-// 	}
-// 	@include xlg {
-// 		max-width: 80px;
-// 		max-height: 80px;
-// 	}
-// }
-//
-// .row {
-// 	@include flexbox();
-//
-// }
+}
+
+.bg--red~.quote__text {
+	color: $primary-dark;
+	font-size: 1rem;
+}

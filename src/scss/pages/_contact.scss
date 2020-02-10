@@ -1,32 +1,50 @@
-.contact{
-	@include flexbox();
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-items(center);
+.contact {
+	.grid {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 1max-content 300px 1max-content 1max-content;
+		grid-template-areas: "name""image""quotes""formul";
+		text-align: center;
+		grid-row-gap: 2rem;
 
-	@include ap-2{
-		@include flex-direction(row);
+		@include lg {
+			grid-template-columns: 35% 65%;
+			grid-template-rows: 1max-content 1max-content 1max-content;
+			grid-template-areas: "image quotes""image name""image formul";
+			grid-column-gap: 1em;
+			grid-row-gap: 2rem;
 
+			.grid__image {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		&__name {
+			grid-area: name;
+	
+			.contact__heading {
+				font-size: 2.3em;
+				color: $highlited-red;
+			}
+		}
+	
+		&__image {
+			justify-self: center;
+			grid-area: image;
+			height: 300px;
+			width: 60%;
+			background: no-repeat center center/cover url('../assets/img/profil.jpg');
+			border-radius: 25px;
+		}
+	
+		&__quote {
+			grid-area: quotes;
+			text-align: left;
+		}
+	
+		&__form {
+			grid-area: formul;
+		}
 	}
-}
-
-.contact__heading{
-	font-size: 2.3em;
-	text-align: center;
-	color: $highlited-red;
-}
-
-.contact__content {
-	width: 100%;
-}
-
-.bg--red{
-	background: $highlited-red;
-	height: 60px;
-
-}
-
-.bg--red ~ .quote__text{
-	color: $primary-dark;
-	font-size: 1rem;
 }
