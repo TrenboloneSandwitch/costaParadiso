@@ -11,13 +11,52 @@ const ul = document.querySelector('.at__list');
 const row2 = document.querySelector('.attributes__row--2');
 const row3 = document.querySelector('.attributes__row--3');
 
+const contact__about = document.querySelector('.contact__about');
+const contact__content = document.querySelector('.contact__content');
+
 window.addEventListener('resize', () => {
     placeApartmentList();
+	resizeQuoteBoxes();
+	placeContactHeading();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    placeApartmentList(); 
+window.addEventListener('load', () => {
+    placeApartmentList();
+	resizeQuoteBoxes();
+	placeContactHeading();
 });
+
+function resizeQuoteBoxes() {
+	const quotes = document.querySelectorAll('.quote');
+	quotes.forEach(q => {
+		const text = q.querySelector('.quote__text');
+		const box = q.querySelector('.quote__box');
+
+		box.style.height = text.offsetHeight + 'px';
+
+	});
+}
+
+function placeContactHeading() {
+	const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
+
+	if (document.querySelector('.contact__heading')) {
+		document.querySelector('.contact__heading').remove();
+	}
+
+
+
+	const el = document.createElement('h2');
+	el.innerHTML = 'Hana Alexanderová';
+	el.classList.add("contact__heading");
+
+
+	if (w >= 1024){
+		console.log(2);
+		contact__content.insertBefore(el, contact__content.childNodes[0]);
+	}
+}
+
 
 function placeApartmentList() {
     const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
@@ -41,7 +80,6 @@ function placeApartmentList() {
     if (w < 1024 && row3.childElementCount !== 0){
         row3.innerHTML='';
         row2.appendChild(ul);
-        console.log(1);
     }
 }
 

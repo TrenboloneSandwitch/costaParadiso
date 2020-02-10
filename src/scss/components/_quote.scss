@@ -1,40 +1,85 @@
-.quote{
-  @include flexbox;
-  @include justify-content(center);
-  @include align-items(center);
-  margin: 0 0 3.2em 0;
+.quote {
+	@include flexbox;
+	@include justify-content(center);
+	@include align-items(center);
+	margin: 0 0;
+	padding: 0;
 
-  &__box{
-    height:6em;
-    width:6em;
-    max-width: 10vw;
-    max-height: 10vw;
-    border-radius:calc(1vw);
-    margin : 0 10px;
-    padding:5px;
-    
-    @include flexbox;
-    @include justify-content(center);
-    @include align-items(center);
-  }
+	&__box {
+		width: 6em;
+		max-width: 10vw;
+		border-radius: calc(1vw);
+		margin: 0 10px;
+		padding: 5px;
+		@include flexbox;
+		@include justify-content(center);
+		@include align-items(center);
+	}
 
-  &__icon{
-    height: 75%;
-    width: 75%;
-    background: no-repeat center center /contain url('../assets/img/svg/marks.svg');
-  }
-  &__text{
-    width: max-content;
-    margin : 0 10px;
-    font-weight: bold;
-    font-size: calc(1em + 1.8vw);
-    color:$highlited-blue;
-  }
-}
-.quote--blue{
-    background: $highlited-blue;
+	&__icon {
+		height: 75%;
+		width: 75%;
+	}
+
+	&__text {
+		width: max-content;
+		margin: 0 10px;
+		font-weight: bold;
+		font-size: calc(1.4em);
+		color: $highlited-blue;
+	}
 }
 
-.quote--red{
-  background: $highlited-red;
+.bg--blue {
+	background: $highlited-blue;
+	margin-bottom: 4rem;
+	height: 6em;
+	max-height: 10vh;
+
 }
+
+.fill--light {
+	fill: $light-bg;
+}
+
+.bg--blue ~ .quote__text{
+	margin-bottom: 4rem;
+}
+
+
+//
+// .bg--red {
+// 	height: 120%;
+// 	width: 120%;
+// 	max-height: 130px;
+// 	max-width: 130px;
+// 	background: $highlited-red;
+// 	position: absolute;
+// 	z-index: -1;
+// 	opacity: 0.13;
+// 	left: -10px;
+//
+// 	& ~ .quote__text {
+// 		color: $primary-dark;
+// 		max-width: max-content;
+// 		word-wrap: break-word;
+// 	}
+// 	@include ap-1 {
+// 		position: relative;
+// 		opacity: 1;
+// 		left: unset;
+// 	}
+// 	@include ap-2 {
+// 		max-width: 100px;
+// 		max-height: 100px;
+// 	}
+// 	@include xlg {
+// 		max-width: 80px;
+// 		max-height: 80px;
+// 	}
+// }
+//
+// .row {
+// 	@include flexbox();
+//
+// }

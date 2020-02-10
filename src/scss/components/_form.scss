@@ -1,0 +1,112 @@
+.form {
+	margin-top: 2em;
+	@include align-items(center);
+
+	%form-element {
+		color: #0e2743;
+		padding: 0 1em;
+		border: none;
+		width: 100%;
+		resize: none;
+		background-color: $light-bg;
+		@include transition(all 200ms ease-in);
+		margin-bottom: 1em;
+		line-height: 1.5;
+		border-radius: 15px;
+
+		&:focus {
+			@include filter(saturate, 80%);
+			outline: 0;
+			@include box-shadow(0 0 0 1px $highlited-red);
+		}
+		@include placeholder {
+			color: rgba(14, 39, 67, 0.4);
+			@include transition(all 1000ms ease);
+		}
+	}
+
+	&__input {
+		@extend %form-element;
+		height: 3em;
+	}
+
+	&__text-area {
+		@extend %form-element;
+		height: 10em;
+		padding-top: .5rem !important;
+	}
+
+	&__messages {
+		margin: 0.5em auto;
+	}
+
+	&__button {
+		position: relative;
+		width: auto;
+		font-size: 1.5em;
+		font-weight: 100;
+		padding: .2em 0.5em;
+		border-radius: 15px;
+		background-color: $primary-dark;
+		color: $light-bg;
+		@include transition(all 300ms ease-in-out);
+		cursor: pointer;
+		overflow: hidden;
+		border: 2px solid $light-bg;
+		z-index: 0;
+
+		&:hover{
+			.form__wave{
+				margin-top: -.5em;
+			}
+		}
+
+		.form__text{
+			z-index: 99;
+		}
+
+		.form__wave{
+			z-index: -1;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #00aeff;
+			top: 100%;
+			left: 0;
+			margin-top: 1.5em;
+			@include transition(all 500ms ease-in-out);
+
+			&::before{
+				z-index: 0;
+				content: '';
+				position: absolute;
+				top: -22px;
+				left: 0;
+				background: url('../assets/img/wave.png');
+				@include animation(0, .75s, animate);
+				width: 100%;
+				height: 22px;
+			}
+
+		}
+
+		@include keyframe(animate){
+			0%{
+				background-position-x: 0;
+				background-position-y: -22px;
+			}
+			100%{
+				background-position-x: 118px;
+				background-position-y: -22px;
+
+			}
+
+		}
+
+		// &:hover {
+		// 	color: #154070;
+		// 	border-color: #154070;
+		// 	background-color: white;
+		// }
+	}
+}

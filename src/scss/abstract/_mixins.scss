@@ -14,7 +14,7 @@
 // brightness     ex: filter: brightness(15%);
 // contrast       ex: filter: contrast(200%);
 // blur           ex: filter: blur(2px);
-@mixin filter($filter-type,$filter-amount) { 
+@mixin filter($filter-type,$filter-amount) {
 	-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
 	-moz-filter: $filter-type+unquote('(#{$filter-amount})');
 	-ms-filter: $filter-type+unquote('(#{$filter-amount})');
@@ -71,18 +71,18 @@
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
   border-radius: $radius;
-  
-  -moz-background-clip: padding; 
+
+  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 
 // Rotate
-@mixin rotate ($deg) { 
+@mixin rotate ($deg) {
 	@include transform(rotate(#{$deg}deg));
 }
 
-@mixin rotateX ($deg) { 
+@mixin rotateX ($deg) {
 	@include transform(rotateX(#{$deg}deg));
 }
 
@@ -167,6 +167,7 @@
     -webkit-animation-fill-mode: $fillmode;
     -webkit-animation-direction: $direction;
     -webkit-animation-iteration-count: $iterationcount;
+	-webkit-animation-timing-function: linear;
 
     -moz-animation-delay: $delay;
     -moz-animation-duration: $duration;
@@ -174,6 +175,7 @@
     -moz-animation-fill-mode: $fillmode;
     -moz-animation-direction: $direction;
     -moz-animation-iteration-count: $iterationcount;
+	-moz-animation-timing-function: linear;
 
     animation-delay: $delay;
     animation-duration: $duration;
@@ -181,16 +183,17 @@
     animation-fill-mode: $fillmode;
     animation-direction: $direction;
     animation-iteration-count: $iterationcount;
+	animation-timing-function: linear;
 }
 
 @mixin placeholder {
     ::-webkit-input-placeholder {@content}
     :-moz-placeholder           {@content}
     ::-moz-placeholder          {@content}
-    :-ms-input-placeholder      {@content}  
+    :-ms-input-placeholder      {@content}
   }
 
-  
+
   @mixin autofill {
     :-webkit-autofill {@content}
     :-webkit-autofill:hover {@content}
@@ -257,10 +260,10 @@
 // - applies to: flex items
 // <integer>
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-     -moz-box-ordinal-group: $val;     
-  	     -ms-flex-order: $val;     
-  	      -webkit-order: $val;  
+  -webkit-box-ordinal-group: $val;
+     -moz-box-ordinal-group: $val;
+  	     -ms-flex-order: $val;
+  	      -webkit-order: $val;
   		      order: $val;
 }
 
@@ -276,7 +279,7 @@
 
 // Flex shrink
 // - applies to: flex item shrink factor
-// <number> 
+// <number>
 @mixin flex-shrink($shrink) {
   -webkit-flex-shrink: $shrink;
      -moz-flex-shrink: $shrink;
@@ -287,7 +290,7 @@
 // Flex basis
 // - the initial main size of the flex item
 // - applies to: flex itemsnitial main size of the flex item
-// <width> 
+// <width>
 @mixin flex-basis($width) {
   -webkit-flex-basis: $width;
      -moz-flex-basis: $width;
@@ -297,7 +300,7 @@
 
 // Axis Alignment
 // - applies to: flex containers
-// flex-start | flex-end | center | space-between | space-around 
+// flex-start | flex-end | center | space-between | space-around
 @mixin justify-content($justify) {
   -webkit-justify-content: $justify;
      -moz-justify-content: $justify;
@@ -308,7 +311,7 @@
 
 // Packing Flex Lines
 // - applies to: multi-line flex containers
-// flex-start | flex-end | center | space-between | space-around | stretch 
+// flex-start | flex-end | center | space-between | space-around | stretch
 @mixin align-content($align) {
   -webkit-align-content: $align;
      -moz-align-content: $align;
@@ -318,7 +321,7 @@
 
 // Cross-axis Alignment
 // - applies to: flex containers
-// flex-start | flex-end | center | baseline | stretch 
+// flex-start | flex-end | center | baseline | stretch
 @mixin align-items($align) {
   -webkit-align-items: $align;
      -moz-align-items: $align;
@@ -329,7 +332,7 @@
 
 // Cross-axis Alignment
 // - applies to: flex items
-// auto | flex-start | flex-end | center | baseline | stretch 
+// auto | flex-start | flex-end | center | baseline | stretch
 @mixin align-self($align) {
   -webkit-align-self: $align;
      -moz-align-self: $align;

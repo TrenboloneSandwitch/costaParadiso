@@ -137,16 +137,10 @@
     }
 
     #{$atr}__list {
-      width: 100%;
       margin-left: 1em;
       list-style: '- ';
       font-size: calc(1em + .2vw);
-      text-align: center;
       color: $secondary-dark;
-
-      @include ap-2{
-        text-align: left;
-      }
     }
   }
 }

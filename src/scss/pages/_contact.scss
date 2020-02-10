@@ -1,0 +1,32 @@
+.contact{
+	@include flexbox();
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+
+	@include ap-2{
+		@include flex-direction(row);
+
+	}
+}
+
+.contact__heading{
+	font-size: 2.3em;
+	text-align: center;
+	color: $highlited-red;
+}
+
+.contact__content {
+	width: 100%;
+}
+
+.bg--red{
+	background: $highlited-red;
+	height: 60px;
+
+}
+
+.bg--red ~ .quote__text{
+	color: $primary-dark;
+	font-size: 1rem;
+}

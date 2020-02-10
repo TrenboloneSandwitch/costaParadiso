@@ -37,7 +37,7 @@ h1{
   text-transform: uppercase;
   text-align: center;
   line-height: .95;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   @include md {
     font-size: calc(1.3em + 8vw);
@@ -69,4 +69,17 @@ h1{
 }
 .mt-3{
   margin-top: 3em;
+}
+
+.column{
+	@include flexbox();
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+}
+
+.row{
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(center);
 }
