@@ -1,5 +1,9 @@
 import "./main.scss";
 
+import { formValidation } from "./js/formValidation.js";
+import { ScrollMaster } from "./js/scrollMaster.js";
+
+
 import '../assets/img/sprite.svg';
 import { log } from "util";
 
@@ -7,24 +11,30 @@ import { log } from "util";
 
 const showcase = document.querySelector('.showcase');
 
+const form = document.querySelector(".form");
+
 const ul = document.querySelector('.at__list');
 const row2 = document.querySelector('.attributes__row--2');
 const row3 = document.querySelector('.attributes__row--3');
 
-const contact__about = document.querySelector('.contact__about');
-const contact__content = document.querySelector('.contact__content');
 
 window.addEventListener('resize', () => {
     placeApartmentList();
 	resizeQuoteBoxes();
-	placeContactHeading();
 });
 
 window.addEventListener('load', () => {
     placeApartmentList();
-	resizeQuoteBoxes();
-	placeContactHeading();
+    resizeQuoteBoxes();
+    
+    
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    new formValidation(form);
+    const smoothScroll = new ScrollMaster(1000, '.navbar__link');
+    smoothScroll.init();
+})
 
 function resizeQuoteBoxes() {
 	const quotes = document.querySelectorAll('.quote');
@@ -33,36 +43,11 @@ function resizeQuoteBoxes() {
 		const box = q.querySelector('.quote__box');
 
 		box.style.height = text.offsetHeight + 'px';
-
+        box.style.width = text.offsetHeight + 'px';
 	});
 }
 
-function placeContactHeading() {
 
-    const q = document.querySelector('.bg--red').parentNode;
-   const n = document.querySelector('.h2name');
-    n.style.height = q.offsetHeight + 'px';
-   console.log(q.offsetHeight); 
-   
-    
-    /* const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
-
-	if (document.querySelector('.contact__heading')) {
-		document.querySelector('.contact__heading').remove();
-	}
-
-
-
-	const el = document.createElement('h2');
-	el.innerHTML = 'Hana Alexanderová';
-	el.classList.add("contact__heading");
-
-
-	if (w >= 1024){
-		console.log(2);
-		contact__content.insertBefore(el, contact__content.childNodes[0]);
-	} */
-}
 
 
 function placeApartmentList() {

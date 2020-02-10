@@ -50,27 +50,27 @@
 	<nav class="navbar">
 		<ul class="navbar__list">
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Oblast</a>
+				<a data-scroll-target='.section__about'  class="navbar__link">Oblast</a>
 			</li>
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Apartmán</a>
+				<a data-scroll-target='.section__apartment' class="navbar__link">Apartmán</a>
 			</li>
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Galerie</a>
+				<a data-scroll-target='.section__gallery' class="navbar__link">Galerie</a>
 			</li>
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Okolí</a>
+				<a data-scroll-target='.section__nearby' class="navbar__link">Okolí</a>
 			</li>
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Platba</a>
+				<a data-scroll-target='.section__payment' class="navbar__link">Platba</a>
 			</li>
 			<li class="navbar__item">
-				<a href="#" class="navbar__link">Kontakt</a>
+				<a data-scroll-target='.section__contact' class="navbar__link">Kontakt</a>
 			</li>
 		</ul>
 	</nav>
 
-	<section class="section section--light">
+	<section class="section section--light section__about">
 		<div class="container">
 			<h1>Úvod</h1>
 			<blockquote class="quote">
@@ -107,7 +107,7 @@
 		</div>
 	</section>
 
-	<section class="section section--dark section--apartment">
+	<section class="section section--dark section__apartment">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 84.871" class="section__wave--top">
 			<path d="M692.327,33.735C304.011-33.916,37.071,67.424,0,82.655v2.215h1400V3.815
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
@@ -186,7 +186,7 @@
 	</section>
 
 
-	<section class="section section--light">
+	<section class="section section--light section__gallery">
 		<div class="container">
 			<h1>Galerie</h1>
 			<p class="container__text">
@@ -207,7 +207,7 @@
 	</section>
 
 
-	<section class="section section--dark section--nearby">
+	<section class="section section--dark section__nearby">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 84.871" class="section__wave--top">
 			<path d="M692.327,33.735C304.011-33.916,37.071,67.424,0,82.655v2.215h1400V3.815
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
@@ -251,7 +251,7 @@
 		</svg>
 	</section>
 
-	<section class="section section--light">
+	<section class="section section--light section__payment">
 		<div class="container">
 			<h1>Ceník A Podmínky</h1>
 			<h2 class="tariff__heading">Ceník apartmánu</h2>
@@ -334,7 +334,7 @@
 	</section>
 
 
-	<section class="section section--dark ">
+	<section class="section section--dark section__contact">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 84.871" class="section__wave--top">
 			<path d="M692.327,33.735C304.011-33.916,37.071,67.424,0,82.655v2.215h1400V3.815
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
@@ -363,12 +363,12 @@
 						<input class="form__input" name="year" placeholder="Aktuální Rok" id="year">
 						<textarea class="form__input form__text-area" name="msg" placeholder="Text Vaší zprávy..."
 							id="msg"></textarea>
-						<div class="form__messages"></div>
 						<input type="submit" href="#" class="form__button" id="submit" value="Odeslat"/>
 					</form>
 				</div>
 				<div class="grid__image"></div>
 			</div>
+			<div class="form__messages"></div>
 		</div>
 	</section>
 </body>

@@ -182,7 +182,11 @@ position: absolute;
   &__item {}
 
   &__link {
-    color: $primary-dark;
+    color: $light-bg;
+    position: relative;
     
+    &:hover{
+      color: rgb(228, 223, 195);
+    }
   }
 }

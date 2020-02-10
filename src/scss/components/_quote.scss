@@ -8,7 +8,7 @@
 	&__box {
 		width: 6em;
 		max-width: 10vw;
-		border-radius: calc(1vw);
+		//border-radius: 25%;
 		margin: 0 10px;
 		padding: 5px;
 		@include flexbox;
@@ -25,7 +25,7 @@
 		width: max-content;
 		margin: 0 10px;
 		font-weight: bold;
-		font-size: calc(1.4em);
+		font-size: calc(1.4em + .5vw);
 		color: $highlited-blue;
 	}
 }
@@ -33,9 +33,7 @@
 .bg--blue {
 	background: $highlited-blue;
 	margin-bottom: 4rem;
-	height: 6em;
 	max-height: 10vh;
-
 }
 
 .fill--light {
@@ -49,10 +47,9 @@
 .bg--red {
 	background: $highlited-red;
 	height: 60px;
-
 }
 
 .bg--red~.quote__text {
 	color: $primary-dark;
-	font-size: 1rem;
+	font-size: calc(1rem + .4vw);
 }
