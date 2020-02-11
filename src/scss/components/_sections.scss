@@ -12,13 +12,13 @@
             text-align: justify;
         }
     }
-    
+
 
     &__wave--top{
         @include scale(-1,-1);
         margin-top: -1px;
     }
-    
+
     &__wave--bottom{
         margin-bottom: -5px;
     }
@@ -31,7 +31,7 @@
     @include section--color($light-bg, $primary-dark);
 }
 
-.section--apartment{
+.section__apartment{
     &::after{
         background: no-repeat right bottom /cover url('../assets/img/byt1.jpg');
         background-attachment: fixed;
@@ -44,7 +44,7 @@
     @include section--color($blue-bg, $primary-dark);
     position: relative;
     z-index: 5;
-    
+
     &::after{
         position: absolute;
         top: 0;

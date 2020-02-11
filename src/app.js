@@ -17,6 +17,15 @@ const ul = document.querySelector('.at__list');
 const row2 = document.querySelector('.attributes__row--2');
 const row3 = document.querySelector('.attributes__row--3');
 
+const navlinks = document.querySelectorAll('.navbar__link');
+
+navlinks.forEach(nl => {
+	nl.addEventListener('click', () => {
+		navbar.toggleState();
+		showcase.classList.toggle('active');
+	});
+});
+
 
 window.addEventListener('resize', () => {
     placeApartmentList();
@@ -26,8 +35,16 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
     placeApartmentList();
     resizeQuoteBoxes();
-    
-    
+});
+
+window.addEventListener('scroll', (e) => {
+	const target = document.querySelector('.showcase__content');
+
+	const scrolled = window.pageYOffset;
+	const rate = scrolled * 0.5;
+	console.log(scrolled);
+
+	target.style.transform = `translate3d(0px, ${rate}px, 0px)`;
 });
 
 document.addEventListener('DOMContentLoaded', () => {

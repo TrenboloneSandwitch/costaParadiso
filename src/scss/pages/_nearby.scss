@@ -1,115 +1,111 @@
-.section--nearby{
-    &::after{
-        background: no-repeat right bottom /cover url('../assets/img/beach.jpg');
-        background-attachment: fixed;
-    }
+.section__nearby {
+	&::after {
+		background: no-repeat right bottom /cover url("../assets/img/beach.jpg");
+		background-attachment: fixed;
+	}
 }
 
-.flex-list{
-    @include flexbox();
-    @include justify-content(center);
-    @include align-items(flex-start);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
+.flex-list {
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(flex-start);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
 
-    &__element{
-        //max-width: 20em;
-        text-align: center;
-        width: 100%;
-        padding: 1em;
-        @include flexbox();
-        @include flex-direction(column);
-        @include align-items(center);
+	&__element {
+		//max-width: 20em;
+		text-align: center;
+		width: 100%;
+		padding: 1em;
+		@include flexbox();
+		@include flex-direction(column);
+		@include align-items(center);
+		@include md {
+		width: 50%;
 
-       
-        @include md{
-            width: 50%;
-            &:not(:first-of-type){
-                margin-top: 0em;
-            }
-        }
+			&:not(:first-of-type) {
+				margin-top: 0;
+			}
+		}
+		@include ap-2 {
+			width: 25%;
+		}
+	}
 
-        @include ap-2{
-            width: 25%;
-        }
-        
-    }
+	&__icon {
+		fill: $highlited-blue;
+	}
 
-    &__icon{
-        fill: $highlited-blue;
-    }
+	&__heading {
+		text-transform: uppercase;
+		font-weight: bold;
+		width: 100%;
+	}
 
-    &__heading{
-        text-transform: uppercase;
-        font-weight: bold;
-        width: 100%;
-    }
-
-    &__list{
-        list-style-type: '- ';
-        text-align: justify;
-        margin-bottom: 2em;
-        max-width: 330px;
-    }
+	&__list {
+		list-style-type: '- ';
+		text-align: justify;
+		margin-bottom: 2em;
+		max-width: 330px;
+	}
 }
 
-.beaches{
-    @include flexbox();
-    @include justify-content(center);
-    @include align-items(flex-start);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    
-    &__element{
-        max-width: 20em;
-        text-align: center;
-        width: 100%;
-        padding: .2em;
+.beaches {
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(flex-start);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
 
-        &:not(:first-of-type){
-            margin-top: 3em;
-        }
-        @include ap-1{
-            width: 50%;
-            
-            &:nth-of-type(2){
-                margin-top: 0em;
-            }
-            
-        }
-        @include ap-2{
-            width: 25%;
-            &:nth-last-of-type(-n+2){
-                margin-top: 0;
-            }
-        }
-        
-    }
-    &__img{
-        width: 100%;
-        border-radius: .5rem;
-    }
+	&__element {
+		max-width: 20em;
+		text-align: center;
+		width: 100%;
+		padding: 0.2em;
 
-    &__icon{
-        width: 100% !important;
-        text-align: center;
-    }
+		&:not(:first-of-type) {
+			margin-top: 3em;
+		}
+		@include ap-1 {
+			width: 50%;
 
-    &__category{
-        text-transform: uppercase;
-        font-weight: bold;
-        width: 100%;
-    }
+			&:nth-of-type(2) {
+				margin-top: 0;
+			}
+		}
+		@include ap-2 {
+			width: 25%;
 
-    &__name{
-        width: 100%;
-        font-size: 1.1em;
-        font-weight: lighter;
-    }
+			&:nth-last-of-type(-n+2) {
+				margin-top: 0;
+			}
+		}
+	}
 
-    &__description{
-        margin-top: 1em;
-        font-size: 1em;
-    }
+	&__img {
+		width: 100%;
+		border-radius: 0.5rem;
+	}
+
+	&__icon {
+		width: 100% !important;
+		text-align: center;
+	}
+
+	&__category {
+		text-transform: uppercase;
+		font-weight: bold;
+		width: 100%;
+	}
+
+	&__name {
+		width: 100%;
+		font-size: 1.1em;
+		font-weight: lighter;
+	}
+
+	&__description {
+		margin-top: 1em;
+		font-size: 1em;
+	}
 }
-
