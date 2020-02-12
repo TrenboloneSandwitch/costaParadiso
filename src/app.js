@@ -26,7 +26,6 @@ navlinks.forEach(nl => {
 	});
 });
 
-
 window.addEventListener('resize', () => {
     placeApartmentList();
 	resizeQuoteBoxes();
@@ -38,13 +37,20 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('scroll', (e) => {
-	const target = document.querySelector('.showcase__content');
 
-	const scrolled = window.pageYOffset;
-	const rate = scrolled * 0.5;
-	console.log(scrolled);
+    if(window.innerWidth >= 568) {
+        const target = document.querySelector('.showcase__content');
 
-	target.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+    let scrolled = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const targetHeight = target.offsetHeight;
+
+
+    if(2*windowHeight/3 - targetHeight > window.pageYOffset ) {
+        const rate = scrolled * .85;
+        target.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+    } 
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {

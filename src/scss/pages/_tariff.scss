@@ -12,7 +12,8 @@
 .tariff{
     @include flexbox();
 	max-width: 700px;
-	margin: 0 auto;
+    margin: 0 auto;
+    margin-bottom: 4rem;
     @include justify-content(space-between);
 
     .tariff__row--2{

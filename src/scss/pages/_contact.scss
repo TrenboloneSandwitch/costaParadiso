@@ -6,6 +6,7 @@
 		grid-template-areas: "name""image""quotes""formul";
 		text-align: center;
 		grid-row-gap: 2rem;
+		margin-top: 4rem;
 
 		@include lg {
 			grid-template-columns: 35% 65%;
