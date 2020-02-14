@@ -1,11 +1,19 @@
 import "./main.scss";
 
-import { formValidation } from "./js/formValidation.js";
-import { ScrollMaster } from "./js/scrollMaster.js";
+import {
+    formValidation
+} from "./js/formValidation.js";
+import {
+    ScrollMaster
+} from "./js/scrollMaster.js";
+
+import { Gallery } from "./js/gallery";
+import { Lazy } from "./js/lazyLoader";
+
+
 
 
 import '../assets/img/sprite.svg';
-import { log } from "util";
 
 /* Navbar */
 
@@ -20,36 +28,53 @@ const row3 = document.querySelector('.attributes__row--3');
 const navlinks = document.querySelectorAll('.navbar__link');
 
 navlinks.forEach(nl => {
-	nl.addEventListener('click', () => {
-		navbar.toggleState();
-		showcase.classList.toggle('active');
-	});
+    nl.addEventListener('click', () => {
+        navbar.toggleState();
+        showcase.classList.toggle('active');
+    });
 });
 
 window.addEventListener('resize', () => {
     placeApartmentList();
-	resizeQuoteBoxes();
+    resizeQuoteBoxes();
 });
+
+const previewImgs = [], src = [];
+const classes = {
+    'vertical': [1, 7, 73],
+    'horizontal': [47, 61, 68, 78],
+    'big': [32, 50, 84]
+};
 
 window.addEventListener('load', () => {
     placeApartmentList();
     resizeQuoteBoxes();
+
+	previewImgs.push(`./assets/img/byt2.jpg`);
+	src.push(`assets/img/byt3.jpg`);
+
+	new Gallery('.gallery-container', previewImgs, src, classes);
+
+	new Lazy();
+
 });
 
 window.addEventListener('scroll', (e) => {
+    const target = document.querySelector('.showcase__content');
+    if (window.innerWidth >= 568) {
 
-    if(window.innerWidth >= 568) {
-        const target = document.querySelector('.showcase__content');
+        const windowHeight = window.innerHeight;
+        const targetHeight = target.offsetHeight;
 
-    let scrolled = window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    const targetHeight = target.offsetHeight;
+		if (windowHeight / 3 - targetHeight > window.pageYOffset) {
+	        requestAnimationFrame(an);
+		}
+    }
 
-
-    if(2*windowHeight/3 - targetHeight > window.pageYOffset ) {
-        const rate = scrolled * .85;
+    function an() {
+        let scrolled = window.pageYOffset;
+        const rate = scrolled * 2.3;
         target.style.transform = `translate3d(0px, ${rate}px, 0px)`;
-    } 
     }
 });
 
@@ -60,22 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function resizeQuoteBoxes() {
-	const quotes = document.querySelectorAll('.quote');
-	quotes.forEach(q => {
-		const text = q.querySelector('.quote__text');
-		const box = q.querySelector('.quote__box');
+    const quotes = document.querySelectorAll('.quote');
+    quotes.forEach(q => {
+        const text = q.querySelector('.quote__text');
+        const box = q.querySelector('.quote__box');
 
-		box.style.height = text.offsetHeight + 'px';
+        box.style.height = text.offsetHeight + 'px';
         box.style.width = text.offsetHeight + 'px';
-	});
+    });
 }
 
 
-
-
 function placeApartmentList() {
-    const w = window.innerWidth ||document.documentElement.clientWidth || document.body.clientWidth;
-    if (w >= 1024 && row3.childElementCount === 0){
+    const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (w >= 1024 && row3.childElementCount === 0) {
         ul.remove();
         row3.innerHTML = `
         <div class="attributes__element at__list">
@@ -92,12 +115,11 @@ function placeApartmentList() {
         </div>
         `;
     };
-    if (w < 1024 && row3.childElementCount !== 0){
-        row3.innerHTML='';
+    if (w < 1024 && row3.childElementCount !== 0) {
+        row3.innerHTML = '';
         row2.appendChild(ul);
     }
 }
-
 
 const navbar = {
     btn: document.querySelector('.navbar__icon'),
