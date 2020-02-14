@@ -1,5 +1,6 @@
 import { log } from "util";
 import { PopUpMsg  } from './message';
+import { ScrollMaster  } from './scrollMaster';
 
 const Joi = require("joi");
 export class formValidation {
@@ -39,6 +40,7 @@ export class formValidation {
       });
     if (errors.length > 0) {
       this.createErrorMessages(errors);
+      new ScrollMaster(1000).smoothScroll(document.querySelector('.form__messages'), 1000);
       e.preventDefault();
     }
     

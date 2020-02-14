@@ -41,17 +41,21 @@ window.addEventListener('resize', () => {
 
 const previewImgs = [], src = [];
 const classes = {
-    'vertical': [1, 7, 73],
-    'horizontal': [47, 61, 68, 78],
-    'big': [32, 50, 84]
+    'vertical': [1, 6],
+    'horizontal': [9],
+    'big': [2]
 };
 
 window.addEventListener('load', () => {
     placeApartmentList();
     resizeQuoteBoxes();
 
-	previewImgs.push(`./assets/img/byt2.jpg`);
-	src.push(`assets/img/byt3.jpg`);
+    
+    for (let index = 0; index < 10; index++) {
+        previewImgs.push(`./assets/img/byt1.jpg`);
+        src.push(`assets/img/byt1.jpg`);
+        
+    }
 
 	new Gallery('.gallery-container', previewImgs, src, classes);
 
@@ -118,6 +122,12 @@ function placeApartmentList() {
     if (w < 1024 && row3.childElementCount !== 0) {
         row3.innerHTML = '';
         row2.appendChild(ul);
+    }
+
+    const cnt =  document.querySelector('.showcase__content');
+    if( w <= 568 && cnt.style.transform !== `translate3d(-50%, -50%, 0px)`) {cnt.style.transform = `translate3d(-50%, -50%, 0px)`;}
+    else if(w > 568 ){
+        cnt.style.transform = `translate3d(0, 0, 0px)`;
     }
 }
 

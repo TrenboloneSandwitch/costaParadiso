@@ -1,6 +1,5 @@
 require('magnific-popup');
-global.$ = require('jquery');
-
+global.$ = require('../../node_modules/jquery/dist/jquery');
 
 export class Gallery {
     constructor(container, imgsSrcPreview, imgSrc, clsObject, lazy = true) {

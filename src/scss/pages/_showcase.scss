@@ -1,8 +1,18 @@
+%fix{
+-webkit-transform: translateZ(0);
+-moz-transform: translateZ(0);
+-ms-transform: translateZ(0);
+-o-transform: translateZ(0);
+transform: translateZ(0);
+}
+
+
 .showcase {
 	$sc: &;
 	height: 100vh;
 	width: 100%;
 	position: relative;
+	@extend %fix;
 	@include transition(filter 350ms ease-in-out);
 
 	&__content {
@@ -12,6 +22,7 @@
 		top: 50%;
 		left: 50%;
 		@include translate(-50%, -50%);
+		@extend %fix;
 		text-align: center;
 		z-index: 10;
 		display: flex;
@@ -155,6 +166,7 @@ $timing: 0.35s;
 	border-radius: 0 0 0 15em;
 	background: $light-bg;
 	@include transition(width $timing ease, height $timing ease $timing);
+	@extend %fix;
 	text-align: right;
 
 	&__icon {
@@ -178,6 +190,7 @@ $timing: 0.35s;
 			text-align: left;
 			padding-top: 0.5em;
 			@include transition(opacity $timing ease 500ms, background $timing ease, color $timing ease);
+			@extend %fix;
 			@include md {
 				margin-top: calc(2.5vh);
 				padding-left: calc(2.5em + 2vw);
