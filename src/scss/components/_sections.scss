@@ -5,7 +5,7 @@
 }
 
 .section{
-    
+
     .container{
         padding-top: 5rem;
         padding-bottom: 4rem;
@@ -33,7 +33,7 @@
 }
 
 .section__apartment{
-    &::after{
+    .section__bg-img{
         background: no-repeat right bottom /cover url('../assets/img/byt1.jpg');
         background-attachment: fixed;
     }
@@ -46,7 +46,7 @@
     position: relative;
     z-index: 5;
 
-    &::after{
+    .section__bg-img{
         position: absolute;
         top: 0;
         left: 0;

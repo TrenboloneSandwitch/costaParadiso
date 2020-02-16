@@ -1,6 +1,6 @@
 .section__nearby {
-	&::after {
-		background: no-repeat right bottom /cover url("../assets/img/beach-bg.jpg");
+	.section__bg-img {
+		background: no-repeat right bottom /cover;
 		background-attachment: fixed;
 	}
 }
@@ -89,7 +89,7 @@
 
 	&__icon {
 		padding: .5em;
-		margin: auto; 
+		margin: auto;
 	}
 
 	&__category {
