@@ -84,6 +84,22 @@ h1{
 	@include align-items(center);
 }
 
+.bg--blue {
+	background: $highlited-blue;
+	margin-bottom: 4rem;
+	max-height: 10vh;
+}
+.fill--light {
+	fill: $light-bg;
+}
+.bg--red {
+	background: $highlited-red;
+	height: 60px;
+}
+.fill--primary-dark {
+	fill: $primary-dark;
+}
+
 %reset-Button {
     border: none;
     margin: 0;

@@ -30,23 +30,8 @@
 	}
 }
 
-.bg--blue {
-	background: $highlited-blue;
-	margin-bottom: 4rem;
-	max-height: 10vh;
-}
-
-.fill--light {
-	fill: $light-bg;
-}
-
 .bg--blue ~ .quote__text{
 	margin-bottom: 4rem;
-}
-
-.bg--red {
-	background: $highlited-red;
-	height: 60px;
 }
 
 .bg--red~.quote__text {

@@ -1,6 +1,6 @@
 .section__nearby {
 	&::after {
-		background: no-repeat right bottom /cover url("../assets/img/beach.jpg");
+		background: no-repeat right bottom /cover url("../assets/img/beach-bg.jpg");
 		background-attachment: fixed;
 	}
 }
@@ -88,8 +88,8 @@
 	}
 
 	&__icon {
-		width: 100% !important;
-		text-align: center;
+		padding: .5em;
+		margin: auto; 
 	}
 
 	&__category {
@@ -107,5 +107,6 @@
 	&__description {
 		margin-top: 1em;
 		font-size: 1em;
+		padding: 0 1em;
 	}
 }

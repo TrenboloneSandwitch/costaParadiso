@@ -309,6 +309,13 @@
             -ms-flex-pack: $justify;
 }
 
+@mixin justify-self($justify) {
+  -webkit-justify-self: $justify;
+     -moz-justify-self: $justify;
+      -ms-justify-self: $justify;
+          justify-self: $justify;
+}
+
 // Packing Flex Lines
 // - applies to: multi-line flex containers
 // flex-start | flex-end | center | space-between | space-around | stretch
