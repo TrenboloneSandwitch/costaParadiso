@@ -1,25 +1,68 @@
+<?php
+    mb_internal_encoding("UTF-8");
+    $hlaska = '';
+    if (isset($_GET['uspech']))
+        $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme. / Email was successfully sent. We will reply you as soon as possible.';
+    if ($_POST) // V poli _POST něco je, odeslal se formulář
+    {
+        if (isset($_POST['name']) && $_POST['name'] &&
+            isset($_POST['email']) && $_POST['email'] &&
+            isset($_POST['subject']) && $_POST['subject'] &&
+            isset($_POST['msg']) && $_POST['msg'] &&
+            isset($_POST['year']) && $_POST['year'] == date('Y'))
+        {
+            $hlavicka = 'From:' . $_POST['email'];
+            $hlavicka .= "\nMIME-Version: 1.0\n";
+            $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
+            $adresa = 'h.alexanderova@seznam.cz';
+            $contentMsg = 'Odesílatel: '.$_POST['name'].".\n"."Zpráva: ".$_POST['msg'];
+            $contentMsg = '<ul style="list-style: none;"><li style="margin-bottom:20px;"><strong>Odesílatel: '.'</strong>'.$_POST['name'].'</li>';
+            $contentMsg .= '<li style="margin-bottom:20px";><strong>Předmět: '.'</strong>'.$_POST['subject'].'</li>';
+            $contentMsg .= '<li style="margin-bottom:20px";><strong>Datum a čas odeslání zprávy: '.'</strong>'.date("d.m.Y").', '.date("H:i:s").'</li>';
+            $contentMsg .= '<li style="margin-bottom:40px";><strong>Email: '.'</strong>'.$_POST['email'].'</li>';
+            $contentMsg .= '<li><strong>Zpráva: '.'</strong>'.$_POST['msg'].'</li></ul>';
+            $predmet = 'Nová zpráva z kontaktního formuláře Costa Paradiso';
+            $uspech = mb_send_mail($adresa, $predmet, $contentMsg, $hlavicka);
+            if ($uspech)
+            {
+                $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme. / Email was successfully sent. We will reply you as soon as possible.';
+                header('Location: index.php?uspech=ano#msg');
+                exit;
+            }
+            else
+                $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
+        }
+        else
+            $hlaska = 'Formulář není správně vyplněný!';
+    }
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Costa Paradiso</title>
-	<meta name="description" content="Asd" />
-	<meta name="keywords" content="a, b, c" />
+	<meta name="description" content="Luxusní apartmán na Sardinii v oblasti Costa Paradiso. Krásné pláže a skvělá dostupnost." />
+	<meta name="keywords" content="Sardinie, Costa, Paradiso, pronájem, moře, pláž, písek, Slunce, dovolená, apartmán, luxus, byt, restaurace, dovolená, výlet, léto, Hana, Alexanderová, cena, výhodné" />
 	<meta name="author" content="Jan Soldát" />
 	<meta name="robots" content="index, follow">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-	<meta property="og:title" content="Zarezervujte si bla bla" />
+	<meta property="og:title" content="Pronájem luxusního apartmánu na Sardinii" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://wawineart.cz/" />
-	<meta property="og:image" content="http://wawineart.cz/assets/img/main-picture.jpg" />
-	<meta property="og:description" content="Content pro fb" />
-	<link rel="shortcut icon" href="../../assets/img/favicon.ico" />
+	<meta property="og:url" content="http://sardinieapartman.cz/" />
+	<meta property="og:image" content="http://sardinieapartman.cz/assets/img/cossi.jpg" />
+	<meta property="og:description" content="Zarezervujte si luxusní apartmán na Sardinii v oblasti Costa Paradiso. Objevte skrytý klenot v srdci Středomoří neboli Sardinie." />
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+	<link rel="manifest" href="../assets/img/site.webmanifest">
 
 </head>
 
@@ -354,7 +397,12 @@
 				</div>
 				<div class="grid__name">
 					<h2 class="contact__heading">Hana Alexanderová</h2>
-
+					<div class="row contact__phone">
+						<svg class="contact__icon fill--primary-dark">
+							<use xlink:href="#sprite_call" />
+						</svg>
+						<h3>+420 606 765 355</h3>
+					</div>
 				</div>
 				<div class="grid__form">
 					<form class="form column" id="contactForm" method="POST" aria-label="Kontaktní Formulář">
@@ -365,34 +413,19 @@
 						<textarea class="form__input form__text-area" name="msg" placeholder="Text Vaší zprávy..." id="msg"></textarea>
 						<input type="submit" href="#" class="form__button" id="submit" value="Odeslat" />
 					</form>
+
+					<?php
+				  if ($hlaska){
+				  if ($hlaska=='Email byl úspěšně odeslán, brzy vám odpovíme. / Email was successfully sent. We will reply you as soon as possible.'){
+					echo('<p align="center" style="font-size:2em;color:green;">' . htmlspecialchars($hlaska) . '</p>');
+				  }
+				  else {
+					echo('<p style="color:red">' . htmlspecialchars($hlaska) . '</p>');
+				  }
+				}
+			  ?>
 				</div>
 				<div class="grid__image lazy-background" imageSrc="./assets/img/profil.jpg">
-					<div class="backside">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 84.871" class="topw">
-							<path d="M692.327,33.735C304.011-33.916,37.071,67.424,0,82.655v2.215h1400V3.815
-				        C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="curve" />
-						</svg>
-						<div class="plus">
-							+
-						</div>
-						<div class="column contact__phone">
-							<svg class="contact__icon fill--primary-dark">
-								<use xlink:href="#sprite_call" />
-							</svg>
-							<h3>+420 606 765 355</h3>
-						</div>
-						<div class="row contact__social">
-							<a href="https://www.facebook.com/hana.jelinkova.395"><svg class="contact__icon">
-								<use xlink:href="#sprite_facebook" />
-							</svg></a>
-
-							<a href="#"><svg class="contact__icon">
-								<use xlink:href="#sprite_instagram" />
-							</svg></a>
-
-
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="form__messages"></div>
@@ -408,7 +441,11 @@
 			</a>
 
 		<p>Copyright &copy; 2020 Hana Alexanderová</p>
-		<p>autor: Jan Soldát</p>
+		<a href="https://www.instagram.com/hanaalexanderova"><svg class="footer__ig">
+			<use xlink:href="#sprite_instagram" />
+		</svg></a>
+		<p class="author">autor: Jan Soldát</p>
+
 	</footer>
 </body>
 

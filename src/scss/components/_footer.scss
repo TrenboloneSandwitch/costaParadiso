@@ -7,13 +7,34 @@ footer{
 		margin-top: .5em;
 	}
 	a{
+		text-align: center;
+	}
+
+	.author{
+		margin-bottom: 1em;
+		font-size: .9rem;
+	}
+
+	.footer__ig{
+		@include filter(grayscale, 0.7);
+		@include transition(filter 250ms ease);
+		height: 3rem;
+		margin: 1rem 0 .5rem 0;
+
+		&:hover{
+			@include filter(grayscale, 0);
+
+		}
+	}
+
+	.footer__link {
 		z-index: 20;
 		background: $primary-dark;
 		width:50px;
 		height:50px;
 		position: absolute;
 		border-radius: 100%;
-		top: calc(0.5rem + -50%);
+		top: -25px;
 		cursor: pointer;
 
 		svg{

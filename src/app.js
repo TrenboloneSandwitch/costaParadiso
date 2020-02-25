@@ -58,7 +58,7 @@ const previewImgs = [],
     src = [];
 const classes = {
     'vertical': [1, 6],
-    'horizontal': [9, 22, 30],
+    'horizontal': [9, 20],
     'big': [2, 15]
 };
 
@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
     bIco.style.height = bImg.offsetHeight + 'px';
     bIco.style.width = bImg.offsetWidth + 'px';
 
-    for (let index = 0; index < 31; index++) {
+    for (let index = 1; index < 22; index++) {
         previewImgs.push(`./assets/img/gallery/${index}.jpg`);
         src.push(`assets/img/gallery/${index}.jpg`);
     }

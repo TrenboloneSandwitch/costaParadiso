@@ -2,6 +2,8 @@ const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
+const Path = require('path');
+
 
 module.exports = merge(common, {
   mode: 'production',
@@ -35,7 +37,16 @@ module.exports = merge(common, {
           'css-loader',
           'sass-loader'
         ]
-      }
+	},{
+        test: /\.svg$/i,
+
+        // from all svg images
+        // include only sprite image
+        include: Path.resolve(__dirname, './assets/img'),
+
+        use: ['svg-sprite-loader'
+        ],
+    },
     ]
   }
 });
