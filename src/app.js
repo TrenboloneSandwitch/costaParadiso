@@ -24,18 +24,12 @@ import '../assets/img/sprite.svg';
 /* Navbar */
 
 const showcase = document.querySelector('.showcase');
-
 const form = document.querySelector(".form");
-
 const bImg = document.querySelectorAll('.beaches__img')[2];
 const bIco = document.querySelector('.beaches__icon');
-
-
-
 const ul = document.querySelector('.at__list');
 const row2 = document.querySelector('.attributes__row--2');
 const row3 = document.querySelector('.attributes__row--3');
-
 const navlinks = document.querySelectorAll('.navbar__link');
 
 navlinks.forEach(nl => {
