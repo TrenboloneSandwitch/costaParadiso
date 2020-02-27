@@ -30,11 +30,6 @@
 	filter: alpha(opacity=$IEValue);
 }
 
-@mixin box-shadow($shadow...) {
-    -webkit-box-shadow:$shadow;
-    -moz-box-shadow:$shadow;
-    box-shadow:$shadow;
-}
 
 @mixin transition($transition...) {
     -moz-transition:    $transition;
@@ -42,30 +37,7 @@
     -webkit-transition: $transition;
     transition:         $transition;
 }
-@mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
-}
+
 
 @mixin border-radius($radius) {
   -moz-border-radius: $radius;
@@ -77,14 +49,7 @@
   background-clip: padding-box;
 }
 
-// Rotate
-@mixin rotate ($deg) {
-	@include transform(rotate(#{$deg}deg));
-}
 
-@mixin rotateX ($deg) {
-	@include transform(rotateX(#{$deg}deg));
-}
 
 // Scale
 @mixin scale($s1, $s2) {
@@ -109,37 +74,6 @@
 	@include transform(translateZ($y));
 }
 
-@mixin perspective ($y) {
-	@include transform(perspective($y));
-}
-
-
-// Skew
-@mixin skew ($x, $y) {
-	@include transform(skew(#{$x}deg, #{$y}deg));
-}
-
-// Transform Origin
-@mixin transform-origin ($origin) {
-    	-webkit-transform-origin: $origin;
-    	-moz-transform-origin: $origin;
-	-ms-transform-origin: $origin;
-	transform-origin: $origin;
-}
-
-//Filter blur
-@mixin blur($radius) {
-	-webkit-filter: blur($radius); /* Chrome, Safari */
-	-ms-filter: blur($radius); /* IE12? */
-	filter: url("data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"blur\"><feGaussianBlur stdDeviation=\"#{$radius}\" /></filter></svg>#blur"); /* Firefox, Safari, Chrome*/
-	filter: progid:DXImageTransform.Microsoft.Blur(Strength=$radius); /* IE9 */
-	filter: blur($radius);
-}
-
-@mixin clipPathPolygon ($a, $b, $c, $d) {
-	-webkit-clip-path: polygon($a, $b, $c, $d);
-	clip-path: polygon($a, $b, $c, $d);
-  }
 
 
   @mixin keyframe ($name) {
@@ -184,6 +118,12 @@
     animation-direction: $direction;
     animation-iteration-count: $iterationcount;
 	animation-timing-function: linear;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
 }
 
 @mixin placeholder {

@@ -5,56 +5,9 @@
 	}
 }
 
-.flex-list {
-	@include flexbox();
-	@include justify-content(center);
-	@include align-items(flex-start);
-	@include flex-direction(row);
-	@include flex-wrap(wrap);
-
-	&__element {
-		//max-width: 20em;
-		text-align: center;
-		width: 100%;
-		padding: 1em;
-		@include flexbox();
-		@include flex-direction(column);
-		@include align-items(center);
-		@include md {
-		width: 50%;
-
-			&:not(:first-of-type) {
-				margin-top: 0;
-			}
-		}
-		@include ap-2 {
-			width: 25%;
-		}
-	}
-
-	&__icon {
-		fill: $highlited-blue;
-	}
-
-	&__heading {
-		text-transform: uppercase;
-		font-weight: bold;
-		width: 100%;
-	}
-
-	&__list {
-		list-style-type: '- ';
-		text-align: justify;
-		margin-bottom: 2em;
-		max-width: 330px;
-	}
-}
 
 .beaches {
-	@include flexbox();
-	@include justify-content(center);
 	@include align-items(flex-start);
-	@include flex-direction(row);
 	@include flex-wrap(wrap);
 
 	&__element {

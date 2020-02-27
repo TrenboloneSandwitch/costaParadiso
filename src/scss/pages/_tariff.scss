@@ -6,11 +6,47 @@
     font-variant: small-caps;
 }
 
+.tariff-list {
+	@include align-items(flex-start);
+	@include flex-wrap(wrap);
+
+	&__element {
+		text-align: center;
+		width: 100%;
+		padding: 1em;
+		@include md {
+		width: 50%;
+
+			&:not(:first-of-type) {
+				margin-top: 0;
+			}
+		}
+		@include ap-2 {
+			width: 25%;
+		}
+	}
+
+	&__icon {
+		fill: $highlited-blue;
+	}
+
+	&__heading {
+		text-transform: uppercase;
+		font-weight: bold;
+		width: 100%;
+	}
+
+	&__list {
+		list-style-type: '- ';
+		text-align: justify;
+		margin-bottom: 2em;
+		max-width: 330px;
+	}
+}
 
 
 
 .tariff{
-    @include flexbox();
 	max-width: 700px;
     margin: 0 auto;
     margin-bottom: 4rem;
@@ -22,10 +58,8 @@
         margin: .2em 0;
     }
 
-    .tariff__row--1, .tariff__row--2, .tariff__row--3{
+    .row{
         height: 2.5em;
-        @include flexbox();
-        @include flex-direction(column);
         @include justify-content(flex-start);
 
         @include ap-1{

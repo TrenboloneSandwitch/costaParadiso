@@ -1,11 +1,7 @@
 $basic-width: 6em;
 $basic-height: 6em;
-
 $md-width: 8em;
 $md-height: 8em;
-
-
-
 
 .gallery-container{
     display: grid;
@@ -33,7 +29,6 @@ $md-height: 8em;
             background-size: cover;
             background-repeat: no-repeat;
             @include transition(all 250ms ease-in-out);
-
             @include lg(){
                 background-position: center center;
             }

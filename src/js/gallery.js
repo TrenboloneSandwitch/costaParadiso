@@ -81,7 +81,8 @@ export class Gallery {
         // Pokud ne tak rovnou tam dej url obrázku
         if (this.lazy === true) {
             //div.style.backgroundImage = `url(./assets/gallery/placeholder.png)`;
-            div.setAttribute('imageSrc', this.imgsSrcPreview[number]);
+			div.dataset.imageSrc = this.imgsSrcPreview[number];
+            //div.setAttribute('imageSrc', this.imgsSrcPreview[number]);
             div.className = 'lazy-background';
         } else div.style.backgroundImage = `url(${this.imgsSrcPreview[number]})`;
 

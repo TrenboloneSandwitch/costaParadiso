@@ -17,7 +17,7 @@ export class Lazy{
                     if (entry.isIntersecting) {
                         const target = entry.target;
                         // Změň obrázek
-                        target.style.backgroundImage = `url(${target.getAttribute('imageSrc')})`;
+                        target.style.backgroundImage = `url(${target.dataset.imageSrc})`;
                         // Vyruš sledování prvku, protože obrázek už změněn
                         backgroundObserver.unobserve(target);
                     }
@@ -38,7 +38,7 @@ export class Lazy{
                     if (entry.isIntersecting) {
                         const target = entry.target;
                         // Změň obrázek
-                        target.src = target.getAttribute('imageSrc');
+                        target.src = target.dataset.imageSrc;
                         // Vyruš sledování prvku, protože obrázek už změněn
                         imgObserver.unobserve(target);
                     }

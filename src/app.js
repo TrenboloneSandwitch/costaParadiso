@@ -45,7 +45,6 @@ window.addEventListener('resize', () => {
     resizeQuoteBoxes();
 
     bIco.style.height = bImg.offsetHeight + 'px';
-
 });
 
 const previewImgs = [],
@@ -70,6 +69,28 @@ window.addEventListener('load', () => {
 
     new Gallery('.gallery-container', previewImgs, src, classes);
     new Lazy();
+
+	tl.to('.navbar', {
+	        height: '100%',
+	        width: '300px',
+	        duration: 0.6,
+	        borderRadius: "0 0 0 10em"
+	    })
+	    .to(".showcase__content", {
+	        opacity: 0,
+	        duration: 1
+	    })
+	    .to('.navbar__link', {
+	        display: 'block',
+	        duration: 0.1
+	    }, "-=1")
+	    .to('.navbar__item', {
+	        opacity: 1,
+	        duration: 0.2,
+	        stagger: 0.2
+	    }, "-=0.6")
+
+	    .reverse();
 });
 
 
@@ -136,9 +157,9 @@ function placeApartmentList() {
     }
 
     const cnt = document.querySelector('.showcase__content');
-    if (w <= 568 && cnt.style.transform !== `translate3d(-50%, -50%, 0px)`) {
+    if (w < 568 && cnt.style.transform !== `translate3d(-50%, -50%, 0px)`) {
         cnt.style.transform = `translate3d(-50%, -50%, 0px)`;
-    } else if (w > 568) {
+    } else if (w >= 568) {
         cnt.style.transform = `translate3d(0, 0, 0px)`;
     }
 }
@@ -154,28 +175,7 @@ const navbar = {
 
 
 const tl = gsap.timeline();
-tl.to('.navbar', {
-        height: '100%',
-        width: '300px',
-        duration: 0.6,
-        borderRadius: "0 0 0 10em"
-    })
-    .to(".showcase__content", {
-        opacity: 0,
-        y: 120,
-        duration: 1
-    })
-    .to('.navbar__link', {
-        display: 'block',
-        duration: 0.1
-    }, "-=1")
-    .to('.navbar__item', {
-        opacity: 1,
-        duration: 0.2,
-        stagger: 0.2
-    }, "-=0.6")
 
-    .reverse();
 
 navbar.btn.addEventListener('click', () => {
     navbar.toggleState();
