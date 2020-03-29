@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     mb_internal_encoding("UTF-8");
     $hlaska = '';
     if (isset($_GET['uspech']))
@@ -36,14 +36,14 @@
             $hlaska = 'Formulář není správně vyplněný!';
     }
 ?>
- -->
+
 
 <!DOCTYPE html>
 <html lang="cs">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ubytování v Sardinii | Apartmán v oblasti Costa Paradiso</title>
+<title data-lang="1">Ubytování v Sardinii | Apartmán v oblasti Costa Paradiso</title>
 <meta name="description" content="Pronájem luxusního apartmánu v Sardinii v oblasti Costa Paradiso. Krásné pláže, skvělá dostupnost a příjemná cena." />
 <meta name="author" content="Jan Soldát" />
 <meta name="robots" content="index, follow">
@@ -60,7 +60,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
 <link rel="manifest" href="../assets/img/site.webmanifest">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css"
+	integrity="sha256-YjcCvXkdRVOucibC9I4mBS41lXPrWfqY2BnpskhZPnw=" crossorigin="anonymous" />
 <body>
 
 
@@ -68,7 +69,7 @@
 	<header class="showcase">
 		<div class="showcase__content">
 			<h1 class="showcase__heading">Costa Paradiso</h1>
-			<p class="showcase__quote">skrytý klenot v srdci Středomoří neboli Sardinie</p>
+			<p class="showcase__quote" data-lang="2">skrytý klenot v srdci Středomoří neboli Sardinie</p>
 		</div>
 
 
@@ -79,6 +80,10 @@
 		<svg class="showcase__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 195.18">
 			<path class="showcase__curve" d="M1400,195.18V97.59c-256.86,63.57-283.79,112-713.14,34.46C273.76,57.47,0,183.94,0,183.94v11.24Z" />
 		</svg>
+
+		<div class="lang-flag">
+			
+		</div>
 
 	</header>
 	<!-- NAVBAR 2 -->
@@ -97,22 +102,22 @@
 
 		<ul class="navbar__list">
 			<li class="navbar__item">
-				<a data-scroll-target='.section__about' class="navbar__link smoothScroll">Oblast</a>
+				<a data-scroll-target='.section__about' class="navbar__link smoothScroll" data-lang="3">Oblast</a>
 			</li>
 			<li class="navbar__item">
-				<a data-scroll-target='.section__apartment' class="navbar__link smoothScroll">Apartmán</a>
+				<a data-scroll-target='.section__apartment' class="navbar__link smoothScroll" data-lang="4">Apartmán</a>
 			</li>
 			<li class="navbar__item">
-				<a data-scroll-target='.section__gallery' class="navbar__link smoothScroll">Galerie</a>
+				<a data-scroll-target='.section__gallery' class="navbar__link smoothScroll" data-lang="5">Galerie</a>
 			</li>
 			<li class="navbar__item">
-				<a data-scroll-target='.section__nearby' class="navbar__link smoothScroll">Okolí</a>
+				<a data-scroll-target='.section__nearby' class="navbar__link smoothScroll" data-lang="6">Okolí</a>
 			</li>
 			<li class="navbar__item">
-				<a data-scroll-target='.section__payment' class="navbar__link smoothScroll">Platba</a>
+				<a data-scroll-target='.section__payment' class="navbar__link smoothScroll" data-lang="7">Platba</a>
 			</li>
 			<li class="navbar__item">
-				<a data-scroll-target='.section__contact' class="navbar__link smoothScroll">Kontakt</a>
+				<a data-scroll-target='.section__contact' class="navbar__link smoothScroll" data-lang="8">Kontakt</a>
 			</li>
 		</ul>
 
@@ -120,32 +125,47 @@
 
 	<section class="section section--light section__about">
 		<div class="container">
-			<h1>Úvod</h1>
+			<h1 data-lang="9">Úvod</h1>
 			<blockquote class="quote row">
 				<div class="quote__box bg--blue row">
 					<svg class="quote__icon fill--light">
 						<use xlink:href="#sprite_quotation-right-mark" />
 					</svg>
 				</div>
-				<p class="quote__text">Chcete vidět 4 odstíny modré?</p>
+				<p class="quote__text" data-lang="10">Chcete vidět 4 odstíny modré?</p>
 			</blockquote>
 			<p class="container__text">
-				Pokud ano, tak nabízíme k pronájmu apartmán na severozápadě Sardinie v lokalitě Costa Paradiso, která je
-				vzdálená <span class="text-high--blue">95 km od mezinárodního letiště</span> Olbia – Costa Smeralda.
+				<span data-lang="11"> 
+					Pokud ano, tak nabízíme k pronájmu apartmán na severozápadě Sardinie v lokalitě Costa Paradiso, která je vzdálená
+				</span>
+<span class="text-high--blue" data-lang="12"> 95 km od mezinárodního letiště </span> Olbia – Costa Smeralda.
 			</p>
+
 			<p class="container__text m-tb">
-				V Costa Paradiso neboli pobřežním ráji se budete cítit vskutku nebesky. Je to <span class="text-high--blue">samostatný resort s vlastní infrastrukturou</span> (supermarkety,
-				restaurace, kavárny,
-				bary, rybárny). Nachází se ve specifickém skalnatém pobřeží a poskytuje <span class="text-high--blue">ideální
-					podmínky pro potápění</span> (Diving Centrum) a pro šnorchlování na plážích (Li Cossi, Cala Tinnari,
-				La
-				Sorgente Li Baietti). Svůj den strávíte dle libosti odpočinkem na pláži, či nevšedními aktivitami, jako
-				jsou
-				potápění nebo <span class="text-high--blue">jízda na čtyřkolkách.</span> Nechybí ani veřejný bazén a
-				dětské
-				hřiště (Sporting Centrum).
+				<span data-lang="13">
+				V Costa Paradiso neboli pobřežním ráji se budete cítit vskutku nebesky. Je to </span>
+				
+				<span class="text-high--blue" data-lang="14">samostatný resort s vlastní infrastrukturou </span>
+
+				<span data-lang="14-2">
+					(supermarkety, restaurace, kavárny, bary, rybárny). Nachází se ve specifickém skalnatém pobřeží a poskytuje 
+				</span>
+
+				<span class="text-high--blue" data-lang="15">
+					ideální podmínky pro potápění
+				</span> 
+
+				<span data-lang="16"> (Diving Centrum) a pro šnorchlování na plážích (Li Cossi, Cala Tinnari, La Sorgente Li Baietti). Svůj den strávíte dle libosti odpočinkem na pláži, či nevšedními aktivitami, jako jsou potápění nebo </span>
+
+				<span class="text-high--blue" data-lang="17">
+					jízda na čtyřkolkách.
+
+				</span> 
+				<span data-lang="17-2">
+					Nechybí ani veřejný bazén a dětské hřiště (Sporting Centrum).
+				</span>
 			</p>
-			<p class="container__text">
+			<p class="container__text" data-lang="18">
 				Prozkoumat můžete i vzdálenější písčité pláže (20 km) Isola Rossa, Badesi a Vignola, ke kterým se
 				dostanete námi
 				zapůjčeným autem.
@@ -159,7 +179,7 @@
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
 		</svg>
 		<div class="container">
-			<h1>Apartmán</h1>
+			<h1 data-lang="4">Apartmán</h1>
 			<span class="section__bg-img lazy-background" data-image-src="./assets/img/byt1.jpg"></span>
 			<!-- Attributes container -->
 			<div class="attributes">
@@ -169,25 +189,25 @@
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_search" />
 						</svg>
-						<p class="attributes__text"> obývací pokoj, dvě ložnice, kuchyně </p>
+						<p class="attributes__text" data-lang="19"> obývací pokoj, dvě ložnice, kuchyně </p>
 					</div>
 					<div class="attributes__element row">
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_air-conditioning" />
 						</svg>
-						<p class="attributes__text"> klimatizace ve všech místnostech </p>
+						<p class="attributes__text" data-lang="20"> klimatizace ve všech místnostech </p>
 					</div>
 					<div class="attributes__element row">
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_garage" />
 						</svg>
-						<p class="attributes__text"> parkovací místo se nachází v místě apartmánu </p>
+						<p class="attributes__text" data-lang="21"> parkovací místo se nachází v místě apartmánu </p>
 					</div>
 					<div class="attributes__element row">
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_sunset" />
 						</svg>
-						<p class="attributes__text text-high">výhled na moře</p>
+						<p class="attributes__text text-high" data-lang="22">výhled na moře</p>
 					</div>
 				</div> <!-- ROW 2 END-->
 				<!-- ROW 2 -->
@@ -196,29 +216,29 @@
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_towels" />
 						</svg>
-						<p class="attributes__text"> ložní prádlo a ručníky </p>
+						<p class="attributes__text" data-lang="23"> ložní prádlo a ručníky </p>
 					</div>
 
 					<div class="attributes__element row">
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_terrace" />
 						</svg>
-						<p class="attributes__text"> částečně zastřešená terasa </p>
+						<p class="attributes__text" data-lang="24"> částečně zastřešená terasa </p>
 					</div>
 
 					<div class="attributes__element row">
 						<svg class="attributes__icon">
 							<use xlink:href="#sprite_wifi" />
 						</svg>
-						<p class="attributes__text"> WiFi není k dispozici, ale v okolních restauracích a barech ano :-)
+						<p class="attributes__text" data-lang="25"> WiFi není k dispozici, ale v okolních restauracích a barech ano :-)
 						</p>
 					</div>
 					<div class="attributes__element row at__list">
 						<ul class="attributes__list">
-							<li>kuchyňská linka je vybavena</li>
-							<li>koupelna bez pračky</li>
-							<li>4 lůžka + 1 přistýlka </li>
-							<li>přístup není bezbariérový</li>
+							<li data-lang="26">kuchyňská linka je vybavena</li>
+							<li data-lang="27">koupelna bez pračky</li>
+							<li data-lang="28">4 lůžka + 1 přistýlka </li>
+							<li data-lang="29">přístup není bezbariérový</li>
 						</ul>
 					</div>
 				</div> <!-- ROW 2 END-->
@@ -235,7 +255,7 @@
 
 	<section class="section section--light section__gallery">
 		<div class="container">
-			<h1>Galerie</h1>
+			<h1 data-lang="5">Galerie</h1>
 			<div class="gallery-container">
 			</div>
 		</div>
@@ -249,35 +269,35 @@
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
 		</svg>
 		<div class="container">
-			<h1>V Blízkosti</h1>
+			<h1 data-lang="30">V Blízkosti</h1>
 			<div class="beaches row">
 				<div class="beaches__element">
 					<img src="./assets/img/sorgente.jpg" data-image-src="./assets/img/sorgente.jpg" alt="Pláž La Sorgente" class="beaches__img lazy-img">
-					<h3 class="beaches__category">přírodní pláže</h3>
+					<h3 class="beaches__category" data-lang="31">přírodní pláže</h3>
 					<h4 class="beaches__name">La Sorgente, Li Baietti</h4>
-					<p class="beaches__description">do 5 minut chůzí</p>
+					<p class="beaches__description" data-lang="32">do 5 minut chůzí</p>
 				</div>
 
 				<div class="beaches__element">
 					<img src="./assets/img/sorgente.jpg" data-image-src="./assets/img/cossi.jpg" alt="Pláž Li Cossi" class="beaches__img lazy-img">
-					<h3 class="beaches__category">písčitá pláž</h3>
+					<h3 class="beaches__category" data-lang="33">písčitá pláž</h3>
 					<h4 class="beaches__name">Li Cossi</h4>
-					<p class="beaches__description">5 minut autem a 15 – 20 minut chůze</p>
+					<p class="beaches__description" data-lang="34">5 minut autem a 15 – 20 minut chůze</p>
 				</div>
 
 				<div class="beaches__element">
 					<img src="./assets/img/sorgente.jpg" data-image-src="./assets/img/tinnari.jpg" alt="Pláž Tinnari" class="beaches__img lazy-img">
-					<h3 class="beaches__category">oblázková pláž</h3>
+					<h3 class="beaches__category" data-lang="35">oblázková pláž</h3>
 					<h4 class="beaches__name">Tinnari</h4>
-					<p class="beaches__description">5 minut autem a následně taxi člun – 10 eur/osoba</p>
+					<p class="beaches__description" data-lang="36">5 minut autem a následně taxi člun – 10 eur/osoba</p>
 				</div>
 				<div class="beaches__element">
 					<svg class="beaches__icon">
 						<use xlink:href="#sprite_five-minutes" />
 					</svg>
-					<h3 class="beaches__category">do 5 minut</h3>
-					<h4 class="beaches__name"></h4>
-					<p class="beaches__description">kavárna, restaurace, bar, pizzeria, obchod s potravinami, rybárna
+					<h3 class="beaches__category" data-lang="37">do 5 minut</h3>
+					<h4 class="beaches__name"> </h4>
+					<p class="beaches__description" data-lang="38">kavárna, restaurace, bar, pizzeria, obchod s potravinami, rybárna
 					</p>
 				</div>
 			</div>
@@ -290,24 +310,24 @@
 
 	<section class="section section--light section__payment">
 		<div class="container">
-			<h1>Ceník A Podmínky</h1>
-			<h2 class="tariff__heading">Ceník apartmánu</h2>
+			<h1 data-lang="39">Ceník A Podmínky</h1>
+			<h2 class="tariff__heading " data-lang="40">Ceník apartmánu</h2>
 			<div class="tariff row">
 				<div class="tariff__column">
-					<p class="tariff__row--1 row">červen a září</p>
-					<p class="tariff__row--2 row">červenec, srpen</p>
-					<p class="tariff__row--3 row">úklid apartmánu</p>
+					<p class="tariff__row--1 row" data-lang="41">červen a září</p>
+					<p class="tariff__row--2 row" data-lang="42">červenec, srpen</p>
+					<p class="tariff__row--3 row" data-lang="43">úklid apartmánu</p>
 				</div>
 				<div class="tariff__column tariff__column--2">
-					<p class="tariff__row--1 row">2400,-Kč/ 90 €</p>
+					<p class="tariff__row--1 row" >2400,-Kč/ 90 €</p>
 					<p class="tariff__row--2 row">2650,-Kč/ 100 €</p>
-					<p class="tariff__row--3 row">800,-Kč/ 30 €</p>
+					<p class="tariff__row--3 row" >800,-Kč/ 30 €</p>
 				</div>
 
 				<div class="tariff__column tariff__column--3">
-					<p class="tariff__row--1 row">za 1 noc</p>
-					<p class="tariff__row--2 row">za 1 noc</p>
-					<p class="tariff__row--3 row">za celý pobyt</p>
+					<p class="tariff__row--1 row" data-lang="44">za 1 noc</p>
+					<p class="tariff__row--2 row" data-lang="44">za 1 noc</p>
+					<p class="tariff__row--3 row" data-lang="45">za celý pobyt</p>
 				</div>
 			</div>
 
@@ -317,14 +337,14 @@
 					<svg class="tariff-list__icon">
 						<use xlink:href="#sprite_car" />
 					</svg>
-					<h3 class="tariff-list__heading mt-1">Pronájem auta</h3>
+					<h3 class="tariff-list__heading mt-1" data-lang="46">Pronájem auta</h3>
 
 
 					<ul class="tariff-list__list mt-1">
 						<li class="text-high">Škoda Karoq 4x4</li>
-						<li>automatická převodovka</li>
-						<li class="text-high">1100,-Kč/40 € za 1 den</li>
-						<li>možnost pronajmutí na libovolný počet dnů</li>
+						<li data-lang="47">automatická převodovka</li>
+						<li class="text-high" data-lang="48">1100,-Kč/40 € za 1 den</li>
+						<li data-lang="49">možnost pronajmutí na libovolný počet dnů</li>
 					</ul>
 				</div>
 
@@ -332,12 +352,12 @@
 					<svg class="tariff-list__icon">
 						<use xlink:href="#sprite_check-in" />
 					</svg>
-					<h3 class="tariff-list__heading mt-1">Příjezd a odjezd</h3>
+					<h3 class="tariff-list__heading mt-1" data-lang="50">Příjezd a odjezd</h3>
 					<ul class="tariff-list__list mt-1">
-						<li class="text-high">den příjezdu a odjezdu je zcela na vás</li>
-						<li>čas příjezdu – po 14.00</li>
-						<li>čas odjezdu – do 11.00</li>
-						<li>minimální počet dnů pro ubytování = <span class="text-high">6 (nocí) </span></li>
+						<li class="text-high" data-lang="51">den příjezdu a odjezdu je zcela na vás</li>
+						<li data-lang="52">čas příjezdu – po 14.00</li>
+						<li data-lang="53">čas odjezdu – do 11.00</li>
+						<li data-lang="54">minimální počet dnů pro ubytování = <span class="text-high" data-lang="55"> 6 (nocí) </span></li>
 					</ul>
 				</div>
 
@@ -345,9 +365,9 @@
 					<svg class="tariff-list__icon">
 						<use xlink:href="#sprite_bill" />
 					</svg>
-					<h3 class="tariff-list__heading mt-1">Platební podmínky</h3>
+					<h3 class="tariff-list__heading mt-1" data-lang="56">Platební podmínky</h3>
 					<ul class="tariff-list__list mt-1">
-						<li>záloha 50% je vratná pouze 30 dnů před termínem příjezdu (poté je nevratná)</li>
+						<li data-lang="57">záloha 50% je vratná pouze 30 dnů před termínem příjezdu (poté je nevratná)</li>
 					</ul>
 				</div>
 
@@ -355,13 +375,13 @@
 					<svg class="tariff-list__icon">
 						<use xlink:href="#sprite_debit-card" />
 					</svg>
-					<h3 class="tariff-list__heading mt-1">Platba</h3>
+					<h3 class="tariff-list__heading mt-1" data-lang="7">Platba</h3>
 					<ul class="tariff-list__list mt-1">
-						<li>záloha 50% + doplatek 3 dny před příjezdem</li>
+						<li data-lang="58">záloha 50% + doplatek 3 dny před příjezdem</li>
 						<li>
-							<span class="text-high">číslo účtu</span> <br>
+							<span class="text-high" data-lang="59">číslo účtu</span> <br>
 							<span>CZK - 2105635394/2700</span> <br>
-							<span>EURO - 2108837290/2700</span>
+							<span>EUR - 2108837290/2700</span>
 						</li>
 					</ul>
 				</div>
@@ -377,7 +397,7 @@
         C1153.911,64.124,1118.931,108.057,692.327,33.735z" class="section__curve" />
 		</svg>
 		<div class="container contact">
-			<h1>Kontakt</h1>
+			<h1 data-lang="8">Kontakt</h1>
 			<div class="grid">
 				<div class="grid__quote">
 					<blockquote class="quote row">
@@ -386,7 +406,7 @@
 								<use xlink:href="#sprite_quotation-right-mark" />
 							</svg>
 						</div>
-						<p class="quote__text">Máte zájem o rezervaci pobytu v krásném apartmánu v blízkosti přírodní
+						<p class="quote__text" data-lang="60">Máte zájem o rezervaci pobytu v krásném apartmánu v blízkosti přírodní
 							pláže v Costa Paradiso?</p>
 					</blockquote>
 				</div>
@@ -439,7 +459,7 @@
 		<a href="https://www.instagram.com/hanaalexanderova"><svg class="footer__ig">
 			<use xlink:href="#sprite_instagram" />
 		</svg></a>
-		<p class="author">autor: Jan Soldát</p>
+		<p class="author" data-lang="61"> autor: Jan Soldát</p>
 
 	</footer>
 </body>

@@ -1,21 +1,20 @@
+@import "../src/scss/abstract/colors";
+@import "../src/scss/abstract/mixins";
+@import "../src/scss/abstract/resolution";
 
+@import "../src/scss/components/general";
+@import "../src/scss/components/sections";
+@import "../src/scss/components/container";
+@import "../src/scss/components/quote";
+@import "../src/scss/components/form";
+@import "../src/scss/components/message";
+@import "../src/scss/components/gallery";
+@import "../src/scss/components/footer";
 
-@import '../src/scss/abstract/colors';
-@import '../src/scss/abstract/mixins';
-@import '../src/scss/abstract/resolution';
+@import "../src/scss/pages/showcase";
+@import "../src/scss/pages/apartment";
+@import "../src/scss/pages/nearby";
+@import "../src/scss/pages/tariff";
+@import "../src/scss/pages/contact";
 
-
-@import '../src/scss/components/general';
-@import '../src/scss/components/sections';
-@import '../src/scss/components/container';
-@import '../src/scss/components/quote';
-@import '../src/scss/components/form';
-@import '../src/scss/components/message';
-@import '../src/scss/components/gallery';
-@import '../src/scss/components/footer';
-
-@import '../src/scss/pages/showcase';
-@import '../src/scss/pages/apartment';
-@import '../src/scss/pages/nearby';
-@import '../src/scss/pages/tariff';
-@import '../src/scss/pages/contact';
+@import "../src/scss/components/language";

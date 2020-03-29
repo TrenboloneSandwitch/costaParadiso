@@ -1,79 +1,75 @@
-
-.tariff__heading{
-    margin: 0 0 0.5rem 0;
-    text-align: center;
-    text-transform: capitalize;
-    font-variant: small-caps;
+.tariff__heading {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-variant: small-caps;
 }
 
 .tariff-list {
-	@include align-items(flex-start);
-	@include flex-wrap(wrap);
+  @include align-items(flex-start);
+  @include flex-wrap(wrap);
 
-	&__element {
-		text-align: center;
-		width: 100%;
-		padding: 1em;
-		@include md {
-		width: 50%;
+  &__element {
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+    @include md {
+      width: 50%;
 
-			&:not(:first-of-type) {
-				margin-top: 0;
-			}
-		}
-		@include ap-2 {
-			width: 25%;
-		}
-	}
+      &:not(:first-of-type) {
+        margin-top: 0;
+      }
+    }
+    @include ap-2 {
+      width: 25%;
+    }
+  }
 
-	&__icon {
-		fill: $highlited-blue;
-	}
+  &__icon {
+    fill: $highlited-blue;
+  }
 
-	&__heading {
-		text-transform: uppercase;
-		font-weight: bold;
-		width: 100%;
-	}
+  &__heading {
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+  }
 
-	&__list {
-		list-style-type: '- ';
-		text-align: justify;
-		margin-bottom: 2em;
-		max-width: 330px;
-	}
+  &__list {
+    list-style-type: "- ";
+    text-align: justify;
+    margin-bottom: 2em;
+    max-width: 330px;
+  }
 }
 
+.tariff {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  @include justify-content(space-between);
 
+  .tariff__row--2 {
+    font-weight: bold;
+    margin: 0.2em 0;
+  }
 
-.tariff{
-	max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-    @include justify-content(space-between);
+  .row {
+    height: 2.5em;
+    @include justify-content(flex-start);
 
-    .tariff__row--2{
-
-        font-weight: bold;
-        margin: .2em 0;
+    @include ap-1 {
+      height: 1.5em;
     }
+  }
 
-    .row{
-        height: 2.5em;
-        @include justify-content(flex-start);
+  .tariff__column--2 {
+    text-align: center;
+    padding: 0 0.5em;
+  }
 
-        @include ap-1{
-            height: 1.5em;
-        }
-    }
-
-    .tariff__column--2{
-        text-align: center;
-        padding: 0 .5em;
-    }
-
-    .tariff__column--3{
-        text-align: right;
-        vertical-align: center;
-    }
+  .tariff__column--3 {
+    text-align: right;
+    vertical-align: center;
+  }
 }
