@@ -47,6 +47,7 @@
   max-width: 700px;
   margin: 0 auto;
   margin-bottom: 4rem;
+  font-size: .85rem;
   @include justify-content(space-between);
 
   .tariff__row--2 {
@@ -56,10 +57,12 @@
 
   .row {
     height: 2.5em;
+    margin: 2.5rem 0;
     @include justify-content(flex-start);
 
     @include ap-1 {
       height: 1.5em;
+      margin: 1.5rem 0;
     }
   }
 
@@ -69,7 +72,7 @@
   }
 
   .tariff__column--3 {
-    text-align: right;
-    vertical-align: center;
+    padding-left: 1em;
+
   }
 }

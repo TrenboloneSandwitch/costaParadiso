@@ -1,17 +1,20 @@
 .lang-flag {
   background: $light-bg;
-  width: 3em;
+  width: 5.5em;
   height: 3em;
   @include flexbox();
   justify-content: center;
   align-items: center;
-  border-radius: 50% 0 0 50%;
+  border-radius: 1em 0 0 1em;
   position: absolute;
   top: 93%;
   right: 0px;
   z-index: 100;
 
-  span {
-    font-size: 1.2em;
+
+
+  .flag-icon{
+    margin: 0 5px;
+    font-size: 1.3em;
   }
 }

@@ -163,7 +163,7 @@ $timing: 0.35s;
         font-size: 1.4em;
         display: none;
         @include md {
-          font-size: calc(1em + 4vh);
+          font-size: calc(0.89em + 2.3vh);
         }
       }
     }

@@ -35,14 +35,14 @@ h1, h2, h3{
   font-weight: 500;
 }
 h1{
-  font-size: calc(1em + 10vw);
+  font-size: calc(1em + 6vw);
   text-transform: uppercase;
   text-align: center;
   line-height: .95;
   margin-bottom: 4rem;
 
   @include md {
-    font-size: calc(1.3em + 8vw);
+    font-size: calc(1.2em + 7vw);
   }
 
   @include lg {
