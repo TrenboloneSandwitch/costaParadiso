@@ -93,7 +93,7 @@ export class Language {
 
   async translate(lang) {
     if (!localStorage.getItem("lang")) return;
-    const filePath = `../../assets/data/translation-${lang}.json`;
+    const filePath = `../../assets/data/texts-${lang}.json`;
     const translatedElements = document.querySelectorAll("[data-lang");
     const translatedData = await getJson(filePath);
     translatedElements.forEach(singleEl => {

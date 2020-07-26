@@ -2,7 +2,7 @@
   "name": "CostaParadiso",
   "version": "1.1.1",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js  --colors",
     "start": "webpack-dev-server --open --config webpack.config.dev.js"

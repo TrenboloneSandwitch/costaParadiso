@@ -76,22 +76,12 @@ function placeApartmentList(width) {
     row3.innerHTML = "";
     row2.appendChild(ul);
   }
-
-//   if (!localStorage.getItem("lang")) return;
-//   const lang = localStorage.getItem("lang");
-//   const filePath = `../../assets/data/translation-${lang}.json`;
-//   getJson(filePath).then(data => {
-//     document.querySelectorAll("[data-lang]").forEach(singleEl => {
-//       const key = singleEl.getAttribute("data-lang");
-//       singleEl.innerText = data[key];
-//     });
-//   });
 }
 
 function checkLanguage(params) {
     if (!localStorage.getItem("lang")) return;
     const lang = localStorage.getItem("lang");
-    const filePath = `../../assets/data/translation-${lang}.json`;
+    const filePath = `../../assets/data/texts-${lang}.json`;
     setLanguage(filePath);
     
 }
