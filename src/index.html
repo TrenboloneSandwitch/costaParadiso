@@ -36,7 +36,7 @@
             $hlaska = 'Formulář není správně vyplněný!';
     }
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html lang="cs">
@@ -429,7 +429,7 @@
 						<input type="submit" href="#" class="form__button" id="submit" value="Odeslat" />
 					</form>
 
-					<?php
+			<?php
 				  if ($hlaska){
 				  if ($hlaska=='Email byl úspěšně odeslán, brzy vám odpovíme. / Email was successfully sent. We will reply you as soon as possible.'){
 					echo('<p align="center" style="font-size:2em;color:green;">' . htmlspecialchars($hlaska) . '</p>');
@@ -438,9 +438,9 @@
 					echo('<p style="color:red">' . htmlspecialchars($hlaska) . '</p>');
 				  }
 				}
-			  ?>
+			  ?> 
 				</div>
-				<div class="grid__image lazy-background" data-image-src="./assets/img/profil.jpg">
+				<div class="grid__image lazy-background" data-image-src="./assets/img/profil1.jpg">
 				</div>
 			</div>
 			<div class="form__messages"></div>
