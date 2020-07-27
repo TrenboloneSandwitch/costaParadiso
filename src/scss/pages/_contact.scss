@@ -22,19 +22,6 @@
 		grid-row-gap: 2rem;
 		margin-top: 4rem;
 
-		@include lg {
-			grid-template-columns: 35% 65%;
-			grid-template-rows: 1max-content 1max-content 1max-content;
-			grid-template-areas: "image quotes""image name""image formul";
-			grid-column-gap: 1em;
-			grid-row-gap: 2rem;
-
-			.grid__image {
-				height: 100%;
-				width: 100%;
-			}
-		}
-
 		&__name {
 			grid-area: name;
 
@@ -47,9 +34,10 @@
 		&__image {
 			grid-area: image;
 			@include justify-self(center);
-			height: 300px;
-			width: 60%;
-			background: no-repeat center center/cover url('../assets/img/profil.jpg');
+			min-height: 300px;
+			height: fit-content;
+			min-width: 70%;
+			background: no-repeat center right/cover url('../assets/img/profil1.jpg');
 			border-radius: 25px;
 			overflow: hidden;
 		}
@@ -61,6 +49,32 @@
 
 		&__form {
 			grid-area: formul;
+		}
+
+
+		@include md {
+			.grid__image {
+				height: 400px;
+				min-width: 60%;
+			}
+		}
+		@include lg{
+
+			.grid__image {
+				height: 400px;
+			}
+		}
+		@media (min-width: 992px) {
+			grid-template-columns: 45% 55%;
+			grid-template-rows: 1max-content 1max-content 1max-content;
+			grid-template-areas: "image quotes""image name""image formul";
+			grid-column-gap: 1em;
+			grid-row-gap: 2rem;
+
+			.grid__image {
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 }
