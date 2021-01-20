@@ -36,7 +36,7 @@
   "license": "ISC",
   "dependencies": {
     "flag-icon-css": "^3.4.6",
-    "gsap": "^3.2.0",
+    "gsap": "^3.6.0",
     "joi": "^14.3.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
