@@ -40,6 +40,6 @@
     "joi": "^14.3.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
-    "svg-sprite-loader": "^4.2.1"
+    "svg-sprite-loader": "^6.0.11"
   }
 }
